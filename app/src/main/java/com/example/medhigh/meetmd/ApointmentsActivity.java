@@ -30,8 +30,6 @@ public class ApointmentsActivity extends AppCompatActivity {
     }
 
     public void initToolbar() {
-//        toolbar.setTitle("APPOINTMENTS");
-//        toolbar.setTitleTextAppearance();
     }
 
     public void initNavigationView() {
@@ -43,7 +41,6 @@ public class ApointmentsActivity extends AppCompatActivity {
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                navigationView.inflateHeaderView(R.layout.navigation_header);
                 drawerLayout.openDrawer(Gravity.LEFT);
             }
         });

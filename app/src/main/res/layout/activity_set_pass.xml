@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
         android:maxHeight="500sp"
-        android:id="@+id/imageView"
+        android:id="@+id/doctorImage"
         android:src="@drawable/bb"
         android:contentDescription="Logo"
         android:scaleType="fitCenter"
@@ -40,7 +40,7 @@
         android:text="@string/set_new_pass"
         android:id="@+id/insurence_number"
         android:layout_margin="5dp"
-        android:layout_below="@+id/imageView"
+        android:layout_below="@+id/doctorImage"
         android:layout_alignParentStart="true" />
 
     <ScrollView
