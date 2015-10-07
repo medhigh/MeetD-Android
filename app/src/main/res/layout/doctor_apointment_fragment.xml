@@ -1,25 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:longClickable="false"
-    android:background="#000">
+    android:background="#fff"
+    android:id="@+id/relativeLayout">
 
     <ImageView
         android:scaleType="fitXY"
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:id="@+id/doctorImage"
-        android:layout_marginTop="34dp"
         android:src="@drawable/revolver"
+        android:layout_marginLeft="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="55dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="14dp"
-        android:layout_marginStart="14dp" />
+        android:layout_alignParentStart="true" />
 
-    <EditText
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/doctorName"
@@ -30,7 +31,7 @@
         android:selectAllOnFocus="false"
         android:textColor="@color/black"
         android:textSize="20sp" />
-    <EditText
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/speciality"
@@ -42,7 +43,7 @@
         android:layout_alignStart="@+id/doctorName"
         android:textSize="17sp" />
 
-    <EditText
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/date"
@@ -55,7 +56,7 @@
 
 
     <RatingBar
-        android:id="@+id/rtbProductRating"
+        android:id="@+id/rating"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:layout_marginLeft="20dp"
@@ -63,15 +64,42 @@
         android:rating="5"
         android:isIndicator="false"
         style="?android:attr/ratingBarStyleSmall"
-        android:layout_below="@+id/date"
+        android:layout_below="@+id/doctorImage"
         android:layout_alignLeft="@+id/doctorImage"
         android:layout_alignStart="@+id/doctorImage" />
 
-    <TextClock
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textClock"
-        android:layout_alignParentTop="true"
+        android:id="@+id/time"
+        android:layout_above="@+id/doctorName"
+        android:layout_alignLeft="@+id/doctorImage"
+        android:layout_alignStart="@+id/doctorImage"
+        android:text="Time: 13:00 - 13:30"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textIsSelectable="false" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="32dp"
+        android:id="@+id/offers"
+        android:layout_alignTop="@+id/time"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:text="Offers: 5"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="32dp"
+        android:id="@+id/location"
+        android:text="Location: San Luchia 08854, Rio Grande hospital, Colorado street 23"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:layout_below="@+id/rating"
         android:layout_alignLeft="@+id/doctorImage"
         android:layout_alignStart="@+id/doctorImage" />
 

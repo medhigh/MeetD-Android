@@ -34,7 +34,11 @@
                 android:textColor="@color/white"
                 android:textStyle="normal" />
         </android.support.v7.widget.Toolbar>
-
+        <ListView
+            android:id="@+id/list_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
     </android.support.design.widget.AppBarLayout>
 
 
