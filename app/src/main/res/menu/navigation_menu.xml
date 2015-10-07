@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/appointments"
+        android:title="@string/appointments"
+        android:orderInCategory="1"
+        android:icon="@drawable/calendar_clock"
+        android:theme="@style/TextTheme" />
+    <item
+        android:id="@+id/search_doctor"
+        android:title="@string/search_doctor"
+        android:orderInCategory="2"
+        android:icon="@drawable/magnify" />
+    <item
+        android:id="@+id/surveys"
+        android:title="@string/surveys"
+        android:orderInCategory="3"
+        android:icon="@drawable/star" />
+    <item
+        android:id="@+id/news"
+        android:title="@string/news"
+        android:orderInCategory="4"
+        android:icon="@drawable/newspaper" />
+    <item
+        android:id="@+id/reminder"
+        android:title="@string/reminders"
+        android:orderInCategory="5"
+        android:icon="@drawable/alarm" />
+    <item
+        android:id="@+id/chat"
+        android:title="@string/chat"
+        android:orderInCategory="6"
+        android:icon="@drawable/forum" />
+    <item
+        android:id="@+id/settings"
+        android:title="@string/settings"
+        android:orderInCategory="7"
+        android:icon="@drawable/settings" />
+    <item
+        android:id="@+id/tutorial"
+        android:title="@string/tutorial"
+        android:orderInCategory="8"
+        android:icon="@drawable/info" />
+    <item
+        android:id="@+id/emergency"
+        android:title="@string/emergency"
+        android:orderInCategory="9"
+        android:icon="@drawable/compass_outline" />
+</menu>
