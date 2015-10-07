@@ -26,7 +26,7 @@ public class DoctorAppointmentFragment extends Fragment {
     TextView speciality;
     @Bind(R.id.date)
     TextView date;
-    @Bind(R.id.rating)
+    @Bind(R.id.rating0)
     RatingBar ratingBar;
     @Bind(R.id.time)
     TextView time;
