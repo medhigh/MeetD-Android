@@ -17,7 +17,7 @@ public class AdapterDoctor extends ArrayAdapter<Fragment> {
     List<Fragment> f;
 
     public AdapterDoctor(Context c, List<Fragment> f) {
-        super(c, R.layout.doctor_apointment_fragment, f);
+        super(c, R.layout.fragment_doctor_apointment, f);
         this.c = c;
         this.f = f;
     }
@@ -25,6 +25,6 @@ public class AdapterDoctor extends ArrayAdapter<Fragment> {
     @Override
     public View getView(int pos, View v, ViewGroup vg) {
         LayoutInflater i = (LayoutInflater) c.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        return i.inflate(R.layout.doctor_apointment_fragment, vg, false);
+        return i.inflate(R.layout.fragment_doctor_apointment, vg, false);
     }
 }

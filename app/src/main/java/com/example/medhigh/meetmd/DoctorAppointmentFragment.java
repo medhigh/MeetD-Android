@@ -38,7 +38,7 @@ public class DoctorAppointmentFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.doctor_apointment_fragment,container,false);
+        return inflater.inflate(R.layout.fragment_doctor_apointment,container,false);
     }
 
     public TextView getLocation() {

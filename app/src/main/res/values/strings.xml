@@ -21,7 +21,11 @@
     <string name="set_new_pass">Set new password</string>
     <string name="password">Password</string>
     <string name="confirm_pass">Confirm the Password</string>
+
+    <!-- Titles -->
     <string name="appointments_title">APPOINTMENTS</string>
+    <string name="search_doctor_title">SEARCH DOCTOR</string>
+
     <string name="appointments">Appointments</string>
     <string name="navigation_menu">Navigation Menu</string>
     <string name="search_doctor">Search Doctor</string>
@@ -38,4 +42,8 @@
     <string name="punctuality">Punctuality:</string>
     <string name="helpfulness">Helpfulness:</string>
     <string name="overall">Overall:</string>
+    <string name="search_doctor_header">SEARCH DOCTOR</string>
+    <string name="name">Name</string>
+    <string name="speciality">Speciality</string>
+    <string name="location">Location</string>
 </resources>

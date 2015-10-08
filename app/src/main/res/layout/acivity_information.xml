@@ -8,7 +8,7 @@
     android:background="@color/colorPrimaryDark"
     android:fitsSystemWindows="true"
     app:popupTheme="@style/AppTheme"
-    tools:context=".ApointmentActivity">
+    tools:context=".Information">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
