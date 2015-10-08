@@ -9,5 +9,5 @@
         android:layout_height="wrap_content"
         android:text="search by location"
         android:textColor="@color/black"
-        tools:context="com.example.medhigh.meetmd.searchFragment.NameFragment"/>
+        tools:context="com.example.medhigh.meetmd.searchFragment.MapFragment"/>
 </LinearLayout>

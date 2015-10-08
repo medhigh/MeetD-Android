@@ -40,7 +40,7 @@ public class ApointmentsActivity extends AppCompatActivity {
         for (int i = 0; i < 10; i++) {
             fragList.add(new DoctorAppointmentFragment());
         }
-        AdapterDoctor adapter = new AdapterDoctor(this, fragList);
+        AdapterDoctor adapter = new AdapterDoctor(this, fragList,R.layout.fragment_doctor_apointment);
         listView.setAdapter(adapter);
     }
 
