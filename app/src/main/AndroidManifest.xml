@@ -14,10 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".SearchDoctor">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
         </activity>
         <activity android:name=".MainActivity">
 
@@ -34,7 +31,24 @@
             android:label="@string/appointments_title">
 
         </activity>
+        <activity android:name=".AppointmentDetailsActivity"
+            android:theme="@style/AppTheme"
+            android:label="@string/appointments">
 
+        </activity>
+        <activity android:name=".SurveyActivity"
+            android:theme="@style/AppTheme"
+            android:label="@string/surveys">
+
+        </activity>
+        <activity android:name=".InformationActivity"
+            android:theme="@style/AppTheme"
+            android:label="@string/information">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

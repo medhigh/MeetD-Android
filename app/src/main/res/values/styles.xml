@@ -6,8 +6,19 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/black</item>
-        <item name="android:colorForeground">@color/white</item>
-        <item name="android:windowBackground">@color/windowBackground</item>
+        <item name="android:colorForeground">@color/black</item>
+        <item name="android:windowBackground">@color/black</item>
+    </style>
+    <style name="AppTheme2" parent="ThemeOverlay.AppCompat.Dark">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/black</item>
+        <item name="android:colorForeground">@color/black</item>
+        <item name="android:windowBackground">@color/black</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:calendarViewShown">@color/black</item>
+        <item name="android:calendarViewStyle">@color/black</item>
     </style>
 
     <style name="TextTheme" parent="@style/Theme.AppCompat.NoActionBar">
@@ -21,4 +32,23 @@
     </style>
 
 
+    <style name="CalendarView" parent="android:Widget.CalendarView">
+        <item name="android:focusedMonthDateColor">@color/colorPrimary</item>
+        <item name="android:weekNumberColor">@color/colorPrimary</item>
+        <item name="android:weekDayTextAppearance">@color/colorPrimary</item>
+        <item name="android:dateTextAppearance">@color/colorPrimary</item>
+    </style>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme3"
+        parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/black</item>
+        <item name="colorPrimaryDark">@color/black</item>
+        <item name="colorAccent">@color/black</item>
+    </style>
+
+    <style name="CustomDayTextAppearance"
+        parent="TextAppearance.AppCompat.Medium">
+        <item name="android:textColor">@color/mcv_text_date_light</item>
+    </style>
 </resources>

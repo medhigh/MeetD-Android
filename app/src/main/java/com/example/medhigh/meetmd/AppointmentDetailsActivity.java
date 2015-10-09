@@ -1,52 +1,44 @@
-package com.example.medhigh.meetmd.timeChooseFragment;
+package com.example.medhigh.meetmd;
 
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.TabLayout;
-import android.support.v4.view.ViewPager;
+import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.ListView;
+import android.widget.Toast;
 
-import com.example.medhigh.meetmd.R;
-import com.example.medhigh.meetmd.searchFragment.TabsPagerFragmentAdapterSingleton;
+import java.util.ArrayList;
+import java.util.List;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-/**
- * Created by medhigh on 08.10.15.
- */
-public class DoctorChooseTimeActivity extends AppCompatActivity{
 
+public class AppointmentDetailsActivity extends AppCompatActivity {
     @Bind(R.id.toolbar)
     android.support.v7.widget.Toolbar toolbar;
     @Bind(R.id.drawer_layout)
     DrawerLayout drawerLayout;
     @Bind(R.id.navigation)
     NavigationView navigationView;
-    @Bind(R.id.tabLayout)
-    TabLayout tabLayout;
-    @Bind(R.id.viewPager)
-    ViewPager viewPager;
-    @Bind(R.id.viewPagerDoctor)
-    ViewPager viewPagerDoctor;
+
+
+    List<DoctorAppointmentFragment> fragmentList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_serarch_doctor);
+        setContentView(R.layout.activity_appointment_details);
         ButterKnife.bind(this);
-        initTabLayout();
+        initToolbar();
         initNavigationView();
     }
 
-    public void initTabLayout() {
-        TabsPagerFragmentAdapterSingleton adapter = TabsPagerFragmentAdapterSingleton.getInstance(getSupportFragmentManager());
-        viewPager.setAdapter(adapter);
-        //tabLayout.setupWithViewPager(viewPager);
-
+    public void initToolbar() {
     }
 
     public void initNavigationView() {
@@ -62,7 +54,10 @@ public class DoctorChooseTimeActivity extends AppCompatActivity{
             }
         });
     }
-    public void onClickInfo(View view){
-
+    public void onClickCancel(View view){
+        Toast.makeText(this,"on click cancel",Toast.LENGTH_SHORT).show();
+    }
+    public void onClickChange(View view){
+        Toast.makeText(this,"on click change",Toast.LENGTH_SHORT).show();
     }
 }

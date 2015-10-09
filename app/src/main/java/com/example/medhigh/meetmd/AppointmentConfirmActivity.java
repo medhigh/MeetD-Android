@@ -2,19 +2,23 @@ package com.example.medhigh.meetmd;
 
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.ListView;
+import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-/**
- * Created by medhigh on 07.10.15.
- */
-public class Information extends AppCompatActivity {
+
+public class AppointmentConfirmActivity extends AppCompatActivity {
     @Bind(R.id.toolbar)
     android.support.v7.widget.Toolbar toolbar;
     @Bind(R.id.drawer_layout)
@@ -22,10 +26,12 @@ public class Information extends AppCompatActivity {
     @Bind(R.id.navigation)
     NavigationView navigationView;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.acivity_information);
+        setContentView(R.layout.activity_appointment_details);
         ButterKnife.bind(this);
         initToolbar();
         initNavigationView();
@@ -46,5 +52,9 @@ public class Information extends AppCompatActivity {
                 drawerLayout.openDrawer(Gravity.LEFT);
             }
         });
+    }
+
+    public void onClickConfirm(View view){
+
     }
 }

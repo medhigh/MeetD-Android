@@ -47,4 +47,10 @@
     <string name="speciality">Speciality</string>
     <string name="location">Location</string>
     <string name="search">Search:</string>
+    <string name="rating">Rating:</string>
+    <string name="change_btn">CHANGE</string>
+    <string name="cancel">CANCEL</string>
+    <string name="confirm">CONFIRM</string>
+    <string name="payment">Your last payment was 12/11/15</string>
+    <string name="survey">SURVEY</string>
 </resources>

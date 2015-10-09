@@ -8,13 +8,13 @@
     android:background="@color/colorPrimaryDark"
     android:fitsSystemWindows="true"
     app:popupTheme="@style/AppTheme"
-    tools:context=".ApointmentActivity">
+    tools:context=".AppCompatActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/windowBackground"
-        android:weightSum="100">
+        >
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
@@ -26,7 +26,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/appointments_title"
+                android:text="@string/survey"
                 android:layout_gravity="center"
                 android:id="@+id/toolbar_title"
                 android:focusableInTouchMode="false"
@@ -39,26 +39,7 @@
             android:id="@+id/list_item"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="50"
             />
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="140dp"
-            android:layout_weight="50"
-            android:background="#ebebeb"
-            android:gravity="center"
-            android:orientation="horizontal">
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/credit_cards" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/payment"
-                android:textColor="#959494"
-                android:textSize="20sp"/>
-        </LinearLayout>
     </android.support.design.widget.AppBarLayout>
 
 

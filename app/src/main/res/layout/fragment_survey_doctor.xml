@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="109dp"
+    android:longClickable="false"
+    android:background="#fff"
+    android:id="@+id/relativeLayout"
+    tools:context=".DoctorChooseTimeActivity">
+
+    <ImageView
+        android:scaleType="fitXY"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:id="@+id/doctorImage"
+        android:src="@drawable/revolver"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="12dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/doctorName"
+        android:layout_alignTop="@+id/doctorImage"
+        android:layout_toRightOf="@+id/doctorImage"
+        android:layout_marginLeft="20dp"
+        android:text="Paul Eddison"
+        android:selectAllOnFocus="false"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/speciality"
+        android:layout_marginTop="25dp"
+        android:text="Oculist"
+        android:textColor="@color/black"
+        android:layout_below="@+id/doctorName"
+        android:layout_alignLeft="@+id/doctorName"
+        android:layout_alignStart="@+id/doctorName"
+        android:textSize="17sp" />
+
+
+    <RatingBar
+        android:id="@+id/rating0"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="5sp"
+        android:numStars="5"
+        android:rating="5"
+        android:isIndicator="false"
+        style="?android:attr/ratingBarStyleSmall"
+        android:layout_below="@+id/doctorName"
+        android:layout_alignLeft="@+id/doctorName"
+        android:layout_alignStart="@+id/doctorName" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="19.09.2015"
+        android:id="@+id/date"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:layout_alignTop="@+id/rating0"
+        android:layout_toRightOf="@+id/rating0"
+        android:layout_toEndOf="@+id/rating0" />
+
+    <ImageButton
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:id="@+id/imageButton"
+        android:src="@drawable/arrow_right"
+        android:background="@color/white"
+        android:scaleType="fitXY"
+        android:layout_marginRight="20dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+</RelativeLayout>

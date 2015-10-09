@@ -10,12 +10,12 @@ import android.view.ViewGroup;
 import com.example.medhigh.meetmd.R;
 
 /**
- * Created by medhigh on 08.10.15.
+ * Created by med_high on 09.10.2015.
  */
-public class MonthChooseFragment extends Fragment{
+public class SearchDoctorShortInfo extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_month_choose,container,false);
+        return inflater.inflate(R.layout.fragment_search_doctor_short_info,container,false);
     }
 }

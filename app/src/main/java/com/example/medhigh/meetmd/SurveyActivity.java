@@ -1,52 +1,54 @@
-package com.example.medhigh.meetmd.timeChooseFragment;
+package com.example.medhigh.meetmd;
 
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.TabLayout;
-import android.support.v4.view.ViewPager;
+import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.ListView;
 
+import com.example.medhigh.meetmd.AdapterDoctor;
+import com.example.medhigh.meetmd.DoctorAppointmentFragment;
 import com.example.medhigh.meetmd.R;
-import com.example.medhigh.meetmd.searchFragment.TabsPagerFragmentAdapterSingleton;
+import com.example.medhigh.meetmd.survey.SurveyDoctorFragment;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-/**
- * Created by medhigh on 08.10.15.
- */
-public class DoctorChooseTimeActivity extends AppCompatActivity{
-
+public class SurveyActivity extends AppCompatActivity {
     @Bind(R.id.toolbar)
     android.support.v7.widget.Toolbar toolbar;
     @Bind(R.id.drawer_layout)
     DrawerLayout drawerLayout;
     @Bind(R.id.navigation)
     NavigationView navigationView;
-    @Bind(R.id.tabLayout)
-    TabLayout tabLayout;
-    @Bind(R.id.viewPager)
-    ViewPager viewPager;
-    @Bind(R.id.viewPagerDoctor)
-    ViewPager viewPagerDoctor;
+    @Bind(R.id.list_item)
+    ListView listView;
+
+    List<SurveyDoctorFragment> fragmentList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_serarch_doctor);
+        setContentView(R.layout.activity_survey);
         ButterKnife.bind(this);
-        initTabLayout();
+        initToolbar();
         initNavigationView();
+        ArrayList<Fragment> fragList = new ArrayList<Fragment>();
+        for (int i = 0; i < 10; i++) {
+            fragList.add(new SurveyDoctorFragment());
+        }
+        AdapterDoctor adapter = new AdapterDoctor(this, fragList,R.layout.fragment_survey_doctor);
+        listView.setAdapter(adapter);
     }
 
-    public void initTabLayout() {
-        TabsPagerFragmentAdapterSingleton adapter = TabsPagerFragmentAdapterSingleton.getInstance(getSupportFragmentManager());
-        viewPager.setAdapter(adapter);
-        //tabLayout.setupWithViewPager(viewPager);
-
+    public void initToolbar() {
     }
 
     public void initNavigationView() {
@@ -61,8 +63,5 @@ public class DoctorChooseTimeActivity extends AppCompatActivity{
                 drawerLayout.openDrawer(Gravity.LEFT);
             }
         });
-    }
-    public void onClickInfo(View view){
-
     }
 }
