@@ -91,131 +91,144 @@
                 android:layout_alignLeft="@+id/doctorImage"
                 android:layout_alignStart="@+id/doctorImage" />
 
-            <RatingBar
-                style="?android:attr/ratingBarStyleSmall"
-                android:id="@+id/rating0"
-                android:layout_marginLeft="80dp"
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:numStars="5"
-                android:rating="5"
-                android:isIndicator="false"
-                android:background="@color/white"
-                android:layout_centerVertical="true"
-                android:layout_alignLeft="@+id/speciality"
-                android:layout_alignStart="@+id/speciality" />
+                android:layout_marginTop="20dp"
+                android:layout_margin="32dp"
+                android:layout_toEndOf="@+id/doctorImage"
+                android:layout_below="@+id/location"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
 
-            <RatingBar
-                android:layout_marginBottom="5dp"
-                style="?android:attr/ratingBarStyleSmall"
-                android:id="@+id/rating1"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:numStars="5"
-                android:rating="5"
-                android:isIndicator="false"
-                android:layout_above="@+id/textView3"
-                android:layout_alignLeft="@+id/rating2"
-                android:layout_alignStart="@+id/rating2" />
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-            <RatingBar
-                android:layout_marginBottom="5dp"
-                style="?android:attr/ratingBarStyleSmall"
-                android:id="@+id/rating2"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:numStars="5"
-                android:rating="5"
-                android:isIndicator="false"
-                android:layout_alignBottom="@+id/textView3"
-                android:layout_alignLeft="@+id/rating0"
-                android:layout_alignStart="@+id/rating0" />
+                    <TextView
+                        android:layout_width="160dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="@string/knowledge"
+                        android:id="@+id/textView"
+                        android:textColor="@color/black"
+                        android:textSize="25sp"/>
 
-            <RatingBar
-                android:layout_marginBottom="5dp"
-                style="?android:attr/ratingBarStyleSmall"
-                android:id="@+id/rating3"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:numStars="5"
-                android:rating="5"
-                android:isIndicator="false"
-                android:layout_above="@+id/textView5"
-                android:layout_alignLeft="@+id/rating2"
-                android:layout_alignStart="@+id/rating2" />
+                    <RatingBar
+                        android:id="@+id/rating0"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:numStars="5"
+                        android:rating="5"
+                        android:isIndicator="false"
+                        android:background="@color/white"
+                        android:stepSize="0.1"
+                        android:theme="@style/Base.TextAppearance.AppCompat" />
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="">
 
-            <RatingBar
-                android:layout_marginBottom="5dp"
-                style="?android:attr/ratingBarStyleSmall"
-                android:id="@+id/rating4"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:numStars="5"
-                android:rating="5"
-                android:isIndicator="false"
-                android:layout_alignBottom="@+id/textView5"
-                android:layout_alignLeft="@+id/rating3"
-                android:layout_alignStart="@+id/rating3" />
+                    <TextView
+                        android:layout_width="160dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="@string/friendliness"
+                        android:id="@+id/textView2"
+                        android:textColor="@color/black"
+                        android:textSize="25sp"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="@string/knowledge"
-                android:id="@+id/textView"
-                android:textColor="@color/black"
-                android:textSize="25sp"
-                android:layout_centerVertical="true"
-                android:layout_alignLeft="@+id/location"
-                android:layout_alignStart="@+id/location" />
+                    <RatingBar
+                        android:id="@+id/rating1"
+                        android:background="@color/background_material_light"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:numStars="5"
+                        android:rating="5"
+                        android:isIndicator="false" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="@string/friendliness"
-                android:id="@+id/textView2"
-                android:textColor="@color/black"
-                android:textSize="25sp"
-                android:layout_below="@+id/textView"
-                android:layout_alignLeft="@+id/textView"
-                android:layout_alignStart="@+id/textView" />
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="@string/punctuality"
-                android:id="@+id/textView3"
-                android:textColor="@color/black"
-                android:textSize="25sp"
-                android:layout_below="@+id/textView2"
-                android:layout_alignLeft="@+id/textView2"
-                android:layout_alignStart="@+id/textView2" />
+                    <TextView
+                        android:layout_width="160dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="@string/punctuality"
+                        android:id="@+id/textView3"
+                        android:textColor="@color/black"
+                        android:textSize="25sp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="@string/helpfulness"
-                android:id="@+id/textView4"
-                android:textColor="@color/black"
-                android:textSize="25sp"
-                android:layout_below="@+id/textView3"
-                android:layout_alignLeft="@+id/textView3"
-                android:layout_alignStart="@+id/textView3" />
+                    <RatingBar
+                        android:id="@+id/rating2"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:numStars="5"
+                        android:rating="5"
+                        android:isIndicator="false" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="@string/overall"
-                android:id="@+id/textView5"
-                android:textColor="@color/black"
-                android:textSize="25sp"
-                android:layout_below="@+id/textView4"
-                android:layout_alignLeft="@+id/textView4"
-                android:layout_alignStart="@+id/textView4" />
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="160dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="@string/helpfulness"
+                        android:id="@+id/textView4"
+                        android:textColor="@color/black"
+                        android:textSize="25sp" />
+
+                    <RatingBar
+                        android:id="@+id/rating3"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:numStars="5"
+                        android:rating="5"
+                        android:isIndicator="false" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="160dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="@string/overall"
+                        android:id="@+id/textView5"
+                        android:textColor="@color/black"
+                        android:textSize="25sp" />
+
+                    <RatingBar
+                        android:id="@+id/rating4"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:numStars="5"
+                        android:rating="5"
+                        android:isIndicator="false"/>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <!--style="?android:attr/ratingBarStyleSmall"-->
 
         </RelativeLayout>
     </android.support.design.widget.AppBarLayout>

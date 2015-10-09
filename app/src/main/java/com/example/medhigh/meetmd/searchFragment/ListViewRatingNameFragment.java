@@ -17,7 +17,7 @@ import butterknife.ButterKnife;
 /**
  * Created by medhigh on 08.10.15.
  */
-public class ListViewRatingNameFragment extends Fragment{
+public class ListViewRatingNameFragment extends Fragment {
     @Bind(R.id.rating)
     RatingBar rating;
     @Bind(R.id.textViewName)

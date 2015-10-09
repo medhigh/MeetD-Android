@@ -10,19 +10,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <RatingBar
-            android:id="@+id/rating"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-
-            android:layout_marginLeft="50dp"
-            android:layout_marginTop="10dp"
-            android:numStars="5"
-            android:rating="5"
-            android:isIndicator="false"
-            style="?android:attr/ratingBarStyleSmall"
-            />
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -30,13 +17,14 @@
             android:text="@string/name"
             android:id="@+id/textViewName"
             android:textSize="26sp"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="138dp"
             android:textColor="@color/black" />
 
     </LinearLayout>
 
     <LinearLayout
         android:orientation="horizontal"
+        android:layout_marginLeft="135dp"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginTop="6dp"

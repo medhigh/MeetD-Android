@@ -21,7 +21,7 @@ import butterknife.ButterKnife;
 /**
  * Created by medhigh on 08.10.15.
  */
-public class NameFragment extends Fragment{
+public class NameFragment extends Fragment {
     @Bind(R.id.editTextSearchField)
     EditText editTextSearchField;
     @Bind(R.id.listView)
@@ -33,10 +33,10 @@ public class NameFragment extends Fragment{
         View view =inflater.inflate(R.layout.fragment_serach_name,container,false);
         ButterKnife.bind(this, view);
         List<Fragment> fragList = new ArrayList<>();
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 40; i++) {
             fragList.add(new ListViewRatingNameFragment());
         }
-        AdapterDoctor adapter = new AdapterDoctor(getActivity(), fragList,R.layout.fragment_list_view_rating_name);
+        AdapterDoctor adapter = new AdapterDoctor(getActivity(), fragList, R.layout.fragment_list_view_rating_name);
         listView.setAdapter(adapter);
         return view;
     }
