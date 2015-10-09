@@ -8,7 +8,7 @@
     android:background="@color/colorPrimaryDark"
     android:fitsSystemWindows="true"
     app:popupTheme="@style/AppTheme"
-    tools:context=".SearchDoctor">
+    tools:context=".DoctorChooseTimeActivity">
     <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">

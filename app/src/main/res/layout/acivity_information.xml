@@ -114,11 +114,12 @@
                         android:text="@string/knowledge"
                         android:id="@+id/textView"
                         android:textColor="@color/black"
-                        android:textSize="25sp"/>
+                        android:textSize="22sp"/>
 
                     <RatingBar
+                        android:layout_gravity="center_vertical"
+                        style="?android:attr/ratingBarStyleSmall"
                         android:id="@+id/rating0"
-                        android:background="#5d5d5d"
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
                         android:numStars="5"
@@ -141,11 +142,12 @@
                         android:text="@string/friendliness"
                         android:id="@+id/textView2"
                         android:textColor="@color/black"
-                        android:textSize="25sp"/>
+                        android:textSize="22sp"/>
 
                     <RatingBar
+                        android:layout_gravity="center_vertical"
                         android:id="@+id/rating1"
-                        android:background="#5d5d5d"
+                        style="?android:attr/ratingBarStyleSmall"
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
                         android:numStars="5"
@@ -166,12 +168,13 @@
                         android:text="@string/punctuality"
                         android:id="@+id/textView3"
                         android:textColor="@color/black"
-                        android:textSize="25sp" />
+                        android:textSize="22sp" />
 
                     <RatingBar
                         android:id="@+id/rating2"
+                        android:layout_gravity="center_vertical"
+                        style="?android:attr/ratingBarStyleSmall"
                         android:layout_height="wrap_content"
-                        android:background="#5d5d5d"
                         android:layout_width="wrap_content"
                         android:numStars="5"
                         android:rating="5"
@@ -191,13 +194,14 @@
                         android:text="@string/helpfulness"
                         android:id="@+id/textView4"
                         android:textColor="@color/black"
-                        android:textSize="25sp" />
+                        android:textSize="22sp" />
 
                     <RatingBar
                         android:id="@+id/rating3"
+                        android:layout_gravity="center_vertical"
+                        style="?android:attr/ratingBarStyleSmall"
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
-                        android:background="#5d5d5d"
                         android:numStars="5"
                         android:rating="5"
                         android:isIndicator="false" />
@@ -216,12 +220,13 @@
                         android:text="@string/overall"
                         android:id="@+id/textView5"
                         android:textColor="@color/black"
-                        android:textSize="25sp" />
+                        android:textSize="22sp" />
 
                     <RatingBar
                         android:id="@+id/rating4"
+                        android:layout_gravity="center_vertical"
+                        style="?android:attr/ratingBarStyleSmall"
                         android:layout_height="wrap_content"
-                        android:background="#5d5d5d"
                         android:layout_width="wrap_content"
                         android:numStars="5"
                         android:rating="5"

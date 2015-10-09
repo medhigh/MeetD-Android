@@ -8,7 +8,7 @@
     android:background="@color/colorPrimaryDark"
     android:fitsSystemWindows="true"
     app:popupTheme="@style/AppTheme"
-    tools:context=".Information">
+    tools:context=".SurveyRatingActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -81,6 +81,7 @@
 
             <TextView
                 android:layout_marginTop="16dp"
+                android:layout_marginRight="24dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/location"
@@ -89,7 +90,7 @@
                 android:textSize="18sp"
                 android:layout_below="@+id/doctorImage"
                 android:layout_alignLeft="@+id/doctorImage"
-                android:layout_alignStart="@+id/doctorImage" />
+                android:layout_alignStart="@+id/doctorImage"/>
 
             <LinearLayout
                 android:orientation="vertical"
@@ -99,7 +100,8 @@
                 android:layout_margin="32dp"
                 android:layout_below="@+id/location"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true">
+                android:layout_alignParentStart="true"
+                android:id="@+id/linearLayout">
 
                 <LinearLayout
                     android:orientation="horizontal"
@@ -114,11 +116,12 @@
                         android:text="@string/knowledge"
                         android:id="@+id/textView"
                         android:textColor="@color/black"
-                        android:textSize="25sp"/>
+                        android:textSize="22sp"/>
 
                     <RatingBar
                         android:id="@+id/rating0"
-                        android:background="#5d5d5d"
+                        android:layout_gravity="center_vertical"
+                        style="?android:attr/ratingBarStyleSmall"
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
                         android:numStars="5"
@@ -141,11 +144,12 @@
                         android:text="@string/friendliness"
                         android:id="@+id/textView2"
                         android:textColor="@color/black"
-                        android:textSize="25sp"/>
+                        android:textSize="22sp"/>
 
                     <RatingBar
                         android:id="@+id/rating1"
-                        android:background="#5d5d5d"
+                        android:layout_gravity="center_vertical"
+                        style="?android:attr/ratingBarStyleSmall"
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
                         android:numStars="5"
@@ -166,12 +170,13 @@
                         android:text="@string/punctuality"
                         android:id="@+id/textView3"
                         android:textColor="@color/black"
-                        android:textSize="25sp" />
+                        android:textSize="22sp" />
 
                     <RatingBar
                         android:id="@+id/rating2"
+                        android:layout_gravity="center_vertical"
+                        style="?android:attr/ratingBarStyleSmall"
                         android:layout_height="wrap_content"
-                        android:background="#5d5d5d"
                         android:layout_width="wrap_content"
                         android:numStars="5"
                         android:rating="5"
@@ -191,13 +196,14 @@
                         android:text="@string/helpfulness"
                         android:id="@+id/textView4"
                         android:textColor="@color/black"
-                        android:textSize="25sp" />
+                        android:textSize="22sp" />
 
                     <RatingBar
                         android:id="@+id/rating3"
+                        android:layout_gravity="center_vertical"
+                        style="?android:attr/ratingBarStyleSmall"
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
-                        android:background="#5d5d5d"
                         android:numStars="5"
                         android:rating="5"
                         android:isIndicator="false" />
@@ -216,12 +222,13 @@
                         android:text="@string/overall"
                         android:id="@+id/textView5"
                         android:textColor="@color/black"
-                        android:textSize="25sp" />
+                        android:textSize="22sp" />
 
                     <RatingBar
                         android:id="@+id/rating4"
+                        android:layout_gravity="center_vertical"
+                        style="?android:attr/ratingBarStyleSmall"
                         android:layout_height="wrap_content"
-                        android:background="#5d5d5d"
                         android:layout_width="wrap_content"
                         android:numStars="5"
                         android:rating="5"

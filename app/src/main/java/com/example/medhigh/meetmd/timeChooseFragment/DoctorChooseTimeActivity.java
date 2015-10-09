@@ -10,8 +10,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.View;
 
+import com.alamkanak.weekview.WeekView;
 import com.example.medhigh.meetmd.R;
-import com.example.medhigh.meetmd.searchFragment.TabsPagerFragmentAdapterSingleton;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
@@ -36,7 +36,7 @@ public class DoctorChooseTimeActivity extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_serarch_doctor);
+        setContentView(R.layout.activity_doctor_chose_time);
         ButterKnife.bind(this);
         initTabLayout();
         initNavigationView();
@@ -45,8 +45,9 @@ public class DoctorChooseTimeActivity extends AppCompatActivity{
     public void initTabLayout() {
         TabsPagerFragmentAdapterSingleton adapter = TabsPagerFragmentAdapterSingleton.getInstance(getSupportFragmentManager());
         viewPager.setAdapter(adapter);
-        //tabLayout.setupWithViewPager(viewPager);
-
+        tabLayout.setupWithViewPager(viewPager);
+        TabsPagerDoctorFragmentAdapterSingleton adapterDoctor = TabsPagerDoctorFragmentAdapterSingleton.getInstance(getSupportFragmentManager());
+        viewPagerDoctor.setAdapter(adapterDoctor);
     }
 
     public void initNavigationView() {
