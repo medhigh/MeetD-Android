@@ -31,7 +31,7 @@ public class AppointmentConfirmActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_appointment_details);
+        setContentView(R.layout.activity_appointment_confirm);
         ButterKnife.bind(this);
         initToolbar();
         initNavigationView();

@@ -1,5 +1,6 @@
 package com.example.medhigh.meetmd.searchFragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -8,7 +9,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.medhigh.meetmd.AppointmentConfirmActivity;
+import com.example.medhigh.meetmd.AppointmentDetailsActivity;
 import com.example.medhigh.meetmd.R;
 
 import butterknife.Bind;
@@ -29,6 +33,9 @@ public class ListViewRatingNameFragment extends Fragment {
         View view =inflater.inflate(R.layout.fragment_list_view_rating_name,container,false);
         ButterKnife.bind(this, view);
         return view;
+    }
+    public void onClick(View view){
+        startActivity(new Intent(getContext(), AppointmentConfirmActivity.class));
     }
 
     public RatingBar getRating() {

@@ -18,15 +18,15 @@ import butterknife.ButterKnife;
  * Created by medhigh on 08.10.15.
  */
 public class DayChooseFragment extends WeekChooseFragment{
-    @Bind(R.id.weekView)
-    WeekView mWeekView;
+    //@Bind(R.id.weekView)
+    //WeekView mWeekView;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_day_choose,container,false);
         ButterKnife.bind(this, view);
-        mWeekView.setFirstDayOfWeek(1);
-        mWeekView.invalidate();
+        //mWeekView.setFirstDayOfWeek(1);
+        //mWeekView.invalidate();
         return view;
     }
 }

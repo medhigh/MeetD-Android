@@ -7,4 +7,8 @@
     <color name="black">#000000</color>
     <color name="windowBackground">#fafafa</color>
     <color name="navigation_view_background">#242424</color>
+    <color name="event_color_01">#000</color>
+    <color name="event_color_02">#000</color>
+    <color name="event_color_03">#000</color>
+    <color name="event_color_04">#000</color>
 </resources>

@@ -1,5 +1,6 @@
 package com.example.medhigh.meetmd.searchFragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -10,7 +11,9 @@ import android.widget.EditText;
 import android.widget.ListView;
 
 import com.example.medhigh.meetmd.AdapterDoctor;
+import com.example.medhigh.meetmd.AppointmentConfirmActivity;
 import com.example.medhigh.meetmd.R;
+import com.example.medhigh.meetmd.SearchDoctor;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,5 +42,8 @@ public class NameFragment extends Fragment {
         AdapterDoctor adapter = new AdapterDoctor(getActivity(), fragList, R.layout.fragment_list_view_rating_name);
         listView.setAdapter(adapter);
         return view;
+    }
+    public void onClick(View view){
+        startActivity(new Intent(getContext(), SearchDoctor.class));
     }
 }

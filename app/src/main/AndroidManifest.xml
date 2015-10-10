@@ -29,7 +29,10 @@
             android:name=".ApointmentsActivity"
             android:theme="@style/AppTheme"
             android:label="@string/appointments_title">
-
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".AppointmentDetailsActivity"
             android:theme="@style/AppTheme"
@@ -48,10 +51,7 @@
         </activity>
         <activity android:name=".timeChooseFragment.DoctorChooseTimeActivity"
             android:theme="@style/AppTheme">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
         </activity>
     </application>
 

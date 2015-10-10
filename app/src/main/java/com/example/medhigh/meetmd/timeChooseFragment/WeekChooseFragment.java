@@ -24,14 +24,13 @@ import butterknife.ButterKnife;
  * Created by medhigh on 08.10.15.
  */
 public class WeekChooseFragment extends Fragment implements WeekView.MonthChangeListener{
-    @Bind(R.id.weekView)
-    WeekView mWeekView;
+    //@Bind(R.id.weekView)
+    ///WeekView mWeekView;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_week_choose, container, false);
-        ButterKnife.bind(this, view);
-        mWeekView.setFirstDayOfWeek(1);
+        //ButterKnife.bind(this, view);
         return view;
     }
     @Override

@@ -10,7 +10,8 @@
         android:id="@+id/search_doctor"
         android:title="@string/search_doctor"
         android:orderInCategory="2"
-        android:icon="@drawable/magnify" />
+        android:icon="@drawable/magnify"
+        />
     <item
         android:id="@+id/surveys"
         android:title="@string/surveys"

@@ -5,7 +5,8 @@
     android:layout_height="wrap_content"
     android:longClickable="false"
     android:background="#fff"
-    android:id="@+id/relativeLayout">
+    android:id="@+id/relativeLayout"
+    android:onClick="onClick">
 
     <ImageView
         android:scaleType="fitXY"
