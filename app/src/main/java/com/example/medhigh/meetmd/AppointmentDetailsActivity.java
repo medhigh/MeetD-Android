@@ -2,16 +2,13 @@ package com.example.medhigh.meetmd;
 
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
-import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.View;
-import android.widget.ListView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.Bind;
@@ -42,6 +39,7 @@ public class AppointmentDetailsActivity extends AppCompatActivity {
     }
 
     public void initNavigationView() {
+        navigationView.setNavigationItemSelectedListener(new NavigationItemSelectedListener(drawerLayout,this));
         navigationView.setItemTextAppearance(R.style.TextTheme);
         toolbar.setNavigationIcon(R.drawable.menu);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, 0, 0);

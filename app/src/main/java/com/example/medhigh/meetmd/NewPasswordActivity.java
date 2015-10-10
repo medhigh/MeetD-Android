@@ -1,5 +1,6 @@
 package com.example.medhigh.meetmd;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -36,7 +37,8 @@ public class NewPasswordActivity extends AppCompatActivity {
         passConfirm = confirmEditText2.getText().toString();
         if (isPasswordsCorrectAndMatches()) {
             //TODO INTENT FORWARD
-            Toast.makeText(this, "Intent Forward", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "Intent Forward", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(getApplicationContext(), ApointmentsActivity.class));
         }
     }
 

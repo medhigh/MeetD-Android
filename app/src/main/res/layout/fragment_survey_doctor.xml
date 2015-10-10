@@ -7,7 +7,8 @@
     android:longClickable="false"
     android:background="#fff"
     android:id="@+id/relativeLayout"
-    tools:context=".DoctorChooseTimeActivity">
+    tools:context=".DoctorChooseTimeActivity"
+    android:onClick="onClick">
 
     <ImageView
         android:scaleType="fitXY"

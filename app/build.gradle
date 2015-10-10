@@ -31,3 +31,8 @@ dependencies {
     compile 'com.squareup:android-times-square:1.6.4@aar'
     compile 'com.github.alamkanak:android-week-view:1.2.3'
 }
+android {
+    lintOptions {
+        abortOnError false
+    }
+}

@@ -1,4 +1,4 @@
-package com.example.medhigh.meetmd;
+package com.example.medhigh.meetmd.reminder;
 
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -8,11 +8,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.View;
 
+import com.example.medhigh.meetmd.NavigationItemSelectedListener;
+import com.example.medhigh.meetmd.R;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-
-public class AppointmentConfirmActivity extends AppCompatActivity {
+/**
+ * Created by medhigh on 07.10.15.
+ */
+public class ReminderActivity extends AppCompatActivity {
     @Bind(R.id.toolbar)
     android.support.v7.widget.Toolbar toolbar;
     @Bind(R.id.drawer_layout)
@@ -20,12 +25,10 @@ public class AppointmentConfirmActivity extends AppCompatActivity {
     @Bind(R.id.navigation)
     NavigationView navigationView;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_appointment_confirm);
+        setContentView(R.layout.activity_reminder);
         ButterKnife.bind(this);
         initToolbar();
         initNavigationView();
@@ -47,9 +50,5 @@ public class AppointmentConfirmActivity extends AppCompatActivity {
                 drawerLayout.openDrawer(Gravity.LEFT);
             }
         });
-    }
-
-    public void onClickConfirm(View view){
-
     }
 }

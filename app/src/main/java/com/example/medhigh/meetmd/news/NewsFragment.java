@@ -1,4 +1,4 @@
-package com.example.medhigh.meetmd.survey;
+package com.example.medhigh.meetmd.news;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -10,12 +10,12 @@ import android.view.ViewGroup;
 import com.example.medhigh.meetmd.R;
 
 /**
- * Created by med_high on 09.10.2015.
+ * Created by medhigh on 10.10.15.
  */
-public class SurveyDoctorFragment extends Fragment {
+public class NewsFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_survey_doctor,container,false);
+        return inflater.inflate(R.layout.fragment_news,container,false);
     }
 }

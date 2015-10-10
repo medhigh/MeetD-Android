@@ -1,5 +1,6 @@
 package com.example.medhigh.meetmd;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -10,10 +11,8 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.ListView;
 
-import com.example.medhigh.meetmd.AdapterDoctor;
-import com.example.medhigh.meetmd.DoctorAppointmentFragment;
-import com.example.medhigh.meetmd.R;
 import com.example.medhigh.meetmd.survey.SurveyDoctorFragment;
+import com.example.medhigh.meetmd.survey.SurveyRatingActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -50,8 +49,12 @@ public class SurveyActivity extends AppCompatActivity {
 
     public void initToolbar() {
     }
+    public void onClick(View view){
+        startActivity(new Intent(this, SurveyRatingActivity.class));
+    }
 
     public void initNavigationView() {
+        navigationView.setNavigationItemSelectedListener(new NavigationItemSelectedListener(drawerLayout,this));
         navigationView.setItemTextAppearance(R.style.TextTheme);
         toolbar.setNavigationIcon(R.drawable.menu);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, 0, 0);

@@ -1,5 +1,6 @@
 package com.example.medhigh.meetmd;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
@@ -46,6 +47,7 @@ public class SearchDoctor extends AppCompatActivity {
     }
 
     public void initNavigationView() {
+        navigationView.setNavigationItemSelectedListener(new NavigationItemSelectedListener(drawerLayout,this));
         navigationView.setItemTextAppearance(R.style.TextTheme);
         toolbar.setNavigationIcon(R.drawable.menu);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, 0, 0);
@@ -57,5 +59,11 @@ public class SearchDoctor extends AppCompatActivity {
                 drawerLayout.openDrawer(Gravity.LEFT);
             }
         });
+    }
+    public void onClick(View view){
+        startActivity(new Intent(this, AppointmentConfirmActivity.class));
+    }
+    public void onClickSpeciality(View view){
+        viewPager.setCurrentItem(0);
     }
 }

@@ -10,12 +10,11 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.View;
-import android.widget.Toast;
 
 import com.alamkanak.weekview.WeekView;
 import com.alamkanak.weekview.WeekViewEvent;
-import com.example.medhigh.meetmd.AppointmentDetailsActivity;
 import com.example.medhigh.meetmd.InformationActivity;
+import com.example.medhigh.meetmd.NavigationItemSelectedListener;
 import com.example.medhigh.meetmd.R;
 
 import java.util.ArrayList;
@@ -61,6 +60,7 @@ public class DoctorChooseTimeActivity extends AppCompatActivity implements WeekV
     }
 
     public void initNavigationView() {
+        navigationView.setNavigationItemSelectedListener(new NavigationItemSelectedListener(drawerLayout,this));
         navigationView.setItemTextAppearance(R.style.TextTheme);
         toolbar.setNavigationIcon(R.drawable.menu);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, 0, 0);
