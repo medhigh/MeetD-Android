@@ -25,9 +25,9 @@ task clean(type: Delete) {
 }
 wsdl2java{
     wsdlsToGenerate = [
-            ["$projectDir/app/src/main/resources/wsdl/XmlService.wsdl"]
+            ["$projectDir/wsdl/XmlService.wsdl"]
     ]
-    generatedWsdlDir = file("$projectDir/generatedsources")
-    wsdlDir = file("$projectDir/app/src/main/resources/wsdl")
+    generatedWsdlDir = file("$projectDir/wsdl")
+    wsdlDir = file("$projectDir/wsdl")
     cxfVersion = "3.0.1"
 }

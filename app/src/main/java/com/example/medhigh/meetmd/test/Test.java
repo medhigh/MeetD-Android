@@ -1,8 +1,10 @@
 package com.example.medhigh.meetmd.test;
 
-/**
- * Created by medhigh on 10.10.15.
- */
+import org.tempuri.ObjectFactory;
+
 public class Test {
-    //ServiceProviderXml
+    public static void main(String[] args) {
+        ObjectFactory objectFactory;
+
+    }
 }
