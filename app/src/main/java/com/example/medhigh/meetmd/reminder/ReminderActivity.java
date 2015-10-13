@@ -8,7 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.View;
 
-import com.example.medhigh.meetmd.NavigationItemSelectedListener;
+import com.example.medhigh.meetmd.control.navigation.NavigationItemSelectedListener;
 import com.example.medhigh.meetmd.R;
 
 import butterknife.Bind;

@@ -1,53 +1,51 @@
-package com.example.medhigh.meetmd.news;
+package com.example.medhigh.meetmd.search;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
-import android.support.v4.app.Fragment;
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.View;
-import android.widget.ListView;
 
-import com.example.medhigh.meetmd.control.adapters.AdapterDoctor;
+import com.example.medhigh.meetmd.appointments.AppointmentConfirmActivity;
 import com.example.medhigh.meetmd.control.navigation.NavigationItemSelectedListener;
 import com.example.medhigh.meetmd.R;
-
-import java.util.ArrayList;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
 /**
- * Created by medhigh on 07.10.15.
+ * Created by medhigh on 08.10.15.
  */
-public class NewsActivity extends AppCompatActivity {
+public class SearchDoctor extends AppCompatActivity {
     @Bind(R.id.toolbar)
     android.support.v7.widget.Toolbar toolbar;
     @Bind(R.id.drawer_layout)
     DrawerLayout drawerLayout;
     @Bind(R.id.navigation)
     NavigationView navigationView;
-    @Bind(R.id.list_item)
-    ListView listView;
+    @Bind(R.id.tabLayout)
+    TabLayout tabLayout;
+    @Bind(R.id.viewPager)
+    ViewPager viewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_news);
+        setContentView(R.layout.activity_serarch_doctor);
         ButterKnife.bind(this);
-        initToolbar();
+        initTabLayout();
         initNavigationView();
-        ArrayList<Fragment> fragList = new ArrayList<Fragment>();
-        for (int i = 0; i < 10; i++) {
-            fragList.add(new NewsFragment());
-        }
-        AdapterDoctor adapter = new AdapterDoctor(this, fragList, R.layout.fragment_news);
-        listView.setAdapter(adapter);
     }
 
-    public void initToolbar() {
+    public void initTabLayout() {
+        TabsPagerFragmentAdapterSingleton adapter = TabsPagerFragmentAdapterSingleton.getInstance(getSupportFragmentManager());
+        viewPager.setAdapter(adapter);
+        tabLayout.setupWithViewPager(viewPager);
     }
 
     public void initNavigationView() {
@@ -63,5 +61,11 @@ public class NewsActivity extends AppCompatActivity {
                 drawerLayout.openDrawer(Gravity.LEFT);
             }
         });
+    }
+    public void onClick(View view){
+        startActivity(new Intent(this, AppointmentConfirmActivity.class));
+    }
+    public void onClickSpeciality(View view){
+        viewPager.setCurrentItem(0);
     }
 }

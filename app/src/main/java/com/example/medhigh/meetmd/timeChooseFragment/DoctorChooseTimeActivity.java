@@ -13,8 +13,8 @@ import android.view.View;
 
 import com.alamkanak.weekview.WeekView;
 import com.alamkanak.weekview.WeekViewEvent;
-import com.example.medhigh.meetmd.InformationActivity;
-import com.example.medhigh.meetmd.NavigationItemSelectedListener;
+import com.example.medhigh.meetmd.information.InformationActivity;
+import com.example.medhigh.meetmd.control.navigation.NavigationItemSelectedListener;
 import com.example.medhigh.meetmd.R;
 
 import java.util.ArrayList;

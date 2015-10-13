@@ -1,14 +1,13 @@
-package com.example.medhigh.meetmd.timeChooseFragment;
+package com.example.medhigh.meetmd.search;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 /**
- * Created by med_high on 09.10.2015.
+ * Created by medhigh on 08.10.15.
  */
 public class TabsPagerFragmentAdapterSingleton extends FragmentPagerAdapter {
-
     private Fragment[] fragments;
     private static TabsPagerFragmentAdapterSingleton adapter;
 
@@ -24,9 +23,9 @@ public class TabsPagerFragmentAdapterSingleton extends FragmentPagerAdapter {
     private TabsPagerFragmentAdapterSingleton(FragmentManager fm) {
         super(fm);
         fragments = new Fragment[3];
-        fragments[0] = new MonthChooseFragment();
-        fragments[1] = new WeekChooseFragment();
-        fragments[2] = new DayChooseFragment();
+        fragments[0] = new NameFragment();
+        fragments[1] = new SpecialityFragment();
+        fragments[2] = new MapFragment();
     }
 
     @Override
@@ -38,11 +37,11 @@ public class TabsPagerFragmentAdapterSingleton extends FragmentPagerAdapter {
     public CharSequence getPageTitle(int position) {
         switch (position){
             case 0:
-                return "Month";//fragments[0].getResources().getString(R.string.name);
+                return "Name";//fragments[0].getResources().getString(R.string.name);
             case 1:
-                return "Week";//fragments[1].getResources().getString(R.string.speciality);
+                return "Speciality";//fragments[1].getResources().getString(R.string.speciality);
             case 2:
-                return "Day";//fragments[2].getResources().getString(R.string.location);
+                return "Location";//fragments[2].getResources().getString(R.string.location);
             default: return "Search";
         }
     }
@@ -52,3 +51,4 @@ public class TabsPagerFragmentAdapterSingleton extends FragmentPagerAdapter {
         return fragments[position];
     }
 }
+

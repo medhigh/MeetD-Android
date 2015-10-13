@@ -30,7 +30,7 @@
         android:contentDescription="Logo"
         android:scaleType="fitCenter"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
+         />
 
     <TextView
         android:textColor="@color/black"
@@ -41,7 +41,7 @@
         android:id="@+id/insurence_number"
         android:layout_margin="5dp"
         android:layout_below="@+id/doctorImage"
-        android:layout_alignParentStart="true" />
+         />
 
     <ScrollView
         android:id="@+id/login_form"
@@ -57,13 +57,15 @@
             android:orientation="vertical">
 
             <EditText
+                android:singleLine="true"
+                android:imeOptions="actionDone"
                 android:textColor="@color/black"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
-                android:textCursorDrawable="@color/colorPrimary"
-                android:id="@+id/ensuranceEditText"
-                android:textSize="20sp" />
+                android:id="@+id/insuranceEditText"
+                android:textSize="20sp"
+                style="@style/Base.V22.Theme.AppCompat"/>
         </LinearLayout>
     </ScrollView>
 
@@ -80,9 +82,11 @@
         android:singleLine="false"
         android:layout_marginTop="50dp"
         android:layout_alignTop="@+id/login_form"
-        android:layout_alignEnd="@+id/login_form"
+        android:onClick="onClickLogin"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:onClick="onClickLogin" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
 
 </RelativeLayout>

@@ -1,5 +1,6 @@
-package com.example.medhigh.meetmd.news;
+package com.example.medhigh.meetmd.survey;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -15,14 +16,12 @@ import com.example.medhigh.meetmd.control.navigation.NavigationItemSelectedListe
 import com.example.medhigh.meetmd.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-/**
- * Created by medhigh on 07.10.15.
- */
-public class NewsActivity extends AppCompatActivity {
+public class SurveyActivity extends AppCompatActivity {
     @Bind(R.id.toolbar)
     android.support.v7.widget.Toolbar toolbar;
     @Bind(R.id.drawer_layout)
@@ -32,22 +31,27 @@ public class NewsActivity extends AppCompatActivity {
     @Bind(R.id.list_item)
     ListView listView;
 
+    List<SurveyDoctorFragment> fragmentList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_news);
+        setContentView(R.layout.activity_survey);
         ButterKnife.bind(this);
         initToolbar();
         initNavigationView();
         ArrayList<Fragment> fragList = new ArrayList<Fragment>();
         for (int i = 0; i < 10; i++) {
-            fragList.add(new NewsFragment());
+            fragList.add(new SurveyDoctorFragment());
         }
-        AdapterDoctor adapter = new AdapterDoctor(this, fragList, R.layout.fragment_news);
+        AdapterDoctor adapter = new AdapterDoctor(this, fragList,R.layout.fragment_survey_doctor);
         listView.setAdapter(adapter);
     }
 
     public void initToolbar() {
+    }
+    public void onClick(View view){
+        startActivity(new Intent(this, SurveyRatingActivity.class));
     }
 
     public void initNavigationView() {

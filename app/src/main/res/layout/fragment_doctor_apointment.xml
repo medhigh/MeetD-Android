@@ -63,7 +63,7 @@
         android:layout_marginLeft="20dp"
         android:numStars="5"
         android:rating="5"
-        android:isIndicator="false"
+        android:isIndicator="true"
         style="?android:attr/ratingBarStyleSmall"
         android:layout_below="@+id/doctorImage"
         android:layout_alignLeft="@+id/doctorImage"

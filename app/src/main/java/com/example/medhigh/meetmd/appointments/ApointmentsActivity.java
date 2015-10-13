@@ -1,5 +1,6 @@
-package com.example.medhigh.meetmd.news;
+package com.example.medhigh.meetmd.appointments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -15,14 +16,13 @@ import com.example.medhigh.meetmd.control.navigation.NavigationItemSelectedListe
 import com.example.medhigh.meetmd.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-/**
- * Created by medhigh on 07.10.15.
- */
-public class NewsActivity extends AppCompatActivity {
+
+public class ApointmentsActivity extends AppCompatActivity {
     @Bind(R.id.toolbar)
     android.support.v7.widget.Toolbar toolbar;
     @Bind(R.id.drawer_layout)
@@ -32,23 +32,27 @@ public class NewsActivity extends AppCompatActivity {
     @Bind(R.id.list_item)
     ListView listView;
 
+    List<DoctorAppointmentFragment> fragmentList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_news);
+        setContentView(R.layout.activity_apointments);
         ButterKnife.bind(this);
         initToolbar();
         initNavigationView();
         ArrayList<Fragment> fragList = new ArrayList<Fragment>();
         for (int i = 0; i < 10; i++) {
-            fragList.add(new NewsFragment());
+            fragList.add(new DoctorAppointmentFragment());
         }
-        AdapterDoctor adapter = new AdapterDoctor(this, fragList, R.layout.fragment_news);
+        AdapterDoctor adapter = new AdapterDoctor(this, fragList, R.layout.fragment_doctor_apointment);
         listView.setAdapter(adapter);
     }
-
-    public void initToolbar() {
+    public void onClick(View view){
+        startActivity(new Intent(getApplicationContext(), AppointmentDetailsActivity.class));
     }
+
+    public void initToolbar() {}
 
     public void initNavigationView() {
         navigationView.setNavigationItemSelectedListener(new NavigationItemSelectedListener(drawerLayout,this));

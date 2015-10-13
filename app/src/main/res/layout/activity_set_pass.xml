@@ -9,7 +9,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     app:popupTheme="@style/Theme.AppCompat.NoActionBar"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.example.medhigh.meetmd.NewPasswordActivity">
+    tools:context="com.example.medhigh.meetmd.login.NewPasswordActivity">
 
     <!-- Login progress -->
     <ProgressBar
@@ -30,7 +30,7 @@
         android:contentDescription="Logo"
         android:scaleType="fitCenter"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
+        />
 
     <TextView
         android:textColor="@color/black"
@@ -41,7 +41,7 @@
         android:id="@+id/insurence_number"
         android:layout_margin="5dp"
         android:layout_below="@+id/doctorImage"
-        android:layout_alignParentStart="true" />
+         />
 
     <ScrollView
         android:id="@+id/login_form"
@@ -62,8 +62,9 @@
                 android:textColor="@color/black"
                 android:inputType="textPassword"
                 android:ems="10"
-                android:textCursorDrawable="@color/colorPrimary"
                 android:id="@+id/passEditText"
+                android:singleLine="true"
+                android:imeOptions="actionNext"
                 android:hint="@string/password" />
 
             <EditText
@@ -72,8 +73,9 @@
                 android:textColor="@color/black"
                 android:inputType="textPassword"
                 android:ems="10"
-                android:textCursorDrawable="@color/colorPrimary"
                 android:id="@+id/confirmEditText2"
+                android:singleLine="true"
+                android:imeOptions="actionDone"
                 android:hint="@string/confirm_pass" />
         </LinearLayout>
     </ScrollView>
@@ -91,7 +93,6 @@
         android:singleLine="false"
         android:layout_alignTop="@+id/login_form"
         android:layout_marginTop="87dp"
-        android:layout_alignParentStart="true"
         android:onClick="onClickLogin" />
 
 

@@ -54,11 +54,12 @@
         android:layout_marginRight="-10dp"
         android:numStars="5"
         android:rating="5"
-        android:isIndicator="false"
+        android:isIndicator="true"
         style="?android:attr/ratingBarStyleSmall"
         android:layout_alignBottom="@+id/textView6"
         android:layout_alignRight="@+id/speciality"
-        android:layout_alignEnd="@+id/speciality" />
+        android:layout_alignEnd="@+id/speciality"
+        />
 
     <TextView
         android:layout_width="wrap_content"

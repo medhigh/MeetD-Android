@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.View;
 
+import com.example.medhigh.meetmd.control.navigation.NavigationItemSelectedListener;
 import com.example.medhigh.meetmd.R;
 
 import butterknife.Bind;
@@ -37,6 +38,7 @@ public class SurveyRatingActivity extends AppCompatActivity{
     }
 
     public void initNavigationView() {
+        navigationView.setNavigationItemSelectedListener(new NavigationItemSelectedListener(drawerLayout,this));
         navigationView.setItemTextAppearance(R.style.TextTheme);
         toolbar.setNavigationIcon(R.drawable.menu);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, 0, 0);
