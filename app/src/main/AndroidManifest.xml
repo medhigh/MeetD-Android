@@ -17,10 +17,7 @@
 
         </activity>
         <activity android:name=".login.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
         </activity>
         <activity
             android:name=".login.LoginActivity"
@@ -47,7 +44,10 @@
         <activity android:name=".information.InformationActivity"
             android:theme="@style/AppTheme"
             android:label="@string/information">
-
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".timeChooseFragment.DoctorChooseTimeActivity"
             android:theme="@style/AppTheme">
