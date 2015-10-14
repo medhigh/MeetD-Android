@@ -49,11 +49,11 @@ public class InformationActivity extends AppCompatActivity {
     }
 
     public void initRatingBar() {
-        starsSetColor(ratingBar0);
-        starsSetColor(ratingBar1);
-        starsSetColor(ratingBar2);
-        starsSetColor(ratingBar3);
-        starsSetColor(ratingBar4);
+//        starsSetColor(ratingBar0);
+//        starsSetColor(ratingBar1);
+//        starsSetColor(ratingBar2);
+//        starsSetColor(ratingBar3);
+//        starsSetColor(ratingBar4);
     }
     private void starsSetColor(RatingBar ratingBar){
         LayerDrawable stars = (LayerDrawable) ratingBar.getProgressDrawable();

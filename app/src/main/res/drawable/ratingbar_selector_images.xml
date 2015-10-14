@@ -3,13 +3,13 @@
 
     <item
         android:id="@+id/background"
-        android:drawable="@drawable/skholinguaicon_blue"/>
+        android:drawable="@drawable/star_full_50px"/>
     <item
         android:id="@+id/secondaryProgress"
-        android:drawable="@drawable/skholinguaicon_blue"/>
+        android:drawable="@drawable/star_full_50px"/>
     <item
         android:id="@+id/progress"
-        android:drawable="@drawable/skholinguaicon"/>
+        android:drawable="@drawable/star_empty_50px"/>
 
 </layer-list>
 

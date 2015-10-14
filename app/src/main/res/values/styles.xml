@@ -54,9 +54,7 @@
 
     <style name="StarRatingBar" parent="@android:style/Widget.RatingBar">
         <item name="android:progressDrawable">@drawable/ratingbar_selector_images</item>
-        <item name="android:minHeight">50dip</item>
-        <item name="android:maxHeight">50dip</item>
-        <item name="android:minWidth">50dip</item>
-        <item name="android:maxWidth">50dip</item>
+        <item name="android:secondaryProgress">5</item>
+        <item name="android:background">@drawable/ratingbar_selector_images</item>
     </style>
 </resources>
