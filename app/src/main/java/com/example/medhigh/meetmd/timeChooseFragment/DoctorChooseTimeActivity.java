@@ -76,7 +76,7 @@ public class DoctorChooseTimeActivity extends AppCompatActivity implements WeekV
 
     public void onClickInfo(View view) {
 
-            startActivity(new Intent(getApplicationContext(), InformationActivity.class));
+            startActivity(new Intent(getApplicationContext(), InformationActivity.class).addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT));
 
     }
 

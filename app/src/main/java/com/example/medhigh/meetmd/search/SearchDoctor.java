@@ -63,7 +63,7 @@ public class SearchDoctor extends AppCompatActivity {
         });
     }
     public void onClick(View view){
-        startActivity(new Intent(this, AppointmentConfirmActivity.class));
+        startActivity(new Intent(this, AppointmentConfirmActivity.class).addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT));
     }
     public void onClickSpeciality(View view){
         viewPager.setCurrentItem(0);

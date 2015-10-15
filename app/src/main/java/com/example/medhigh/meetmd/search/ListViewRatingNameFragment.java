@@ -33,7 +33,7 @@ public class ListViewRatingNameFragment extends Fragment {
         return view;
     }
     public void onClick(View view){
-        startActivity(new Intent(getContext(), AppointmentConfirmActivity.class));
+        startActivity(new Intent(getContext(), AppointmentConfirmActivity.class).addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT));
     }
 
     public RatingBar getRating() {

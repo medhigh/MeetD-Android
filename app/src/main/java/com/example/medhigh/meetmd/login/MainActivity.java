@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity implements EditText.OnEditor
             if (ifSMSCorrect()) {
                 //TODO INTENT FORWARD HERE
                 //if user not exist yet
-                startActivity(new Intent(this, NewPasswordActivity.class));
+                startActivity(new Intent(this, NewPasswordActivity.class).addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT));
             } else {
                 Toast.makeText(this, "Incorrect SMS Code", Toast.LENGTH_SHORT).show();
             }

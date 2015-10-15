@@ -44,7 +44,7 @@ public class NewPasswordActivity extends AppCompatActivity  implements EditText.
         if (isPasswordsCorrectAndMatches()) {
             //TODO INTENT FORWARD
             //Toast.makeText(this, "Intent Forward", Toast.LENGTH_SHORT).show();
-            startActivity(new Intent(this, ApointmentsActivity.class));
+            startActivity(new Intent(this, ApointmentsActivity.class).addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT));
         }
     }
 

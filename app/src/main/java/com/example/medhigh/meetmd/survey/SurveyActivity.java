@@ -51,7 +51,7 @@ public class SurveyActivity extends AppCompatActivity {
     public void initToolbar() {
     }
     public void onClick(View view){
-        startActivity(new Intent(this, SurveyRatingActivity.class));
+        startActivity(new Intent(this, SurveyRatingActivity.class).addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT));
     }
 
     public void initNavigationView() {
