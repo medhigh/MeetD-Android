@@ -12,9 +12,7 @@ import android.widget.ListView;
 
 import com.example.medhigh.meetmd.control.adapters.AdapterDoctor;
 import com.example.medhigh.meetmd.R;
-
-import java.util.ArrayList;
-import java.util.List;
+import com.example.medhigh.meetmd.control.keepers.Controller;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -33,15 +31,11 @@ public class NameFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view =inflater.inflate(R.layout.fragment_serach_name,container,false);
         ButterKnife.bind(this, view);
-        List<Fragment> fragList = new ArrayList<>();
-        for (int i = 0; i < 40; i++) {
-            fragList.add(new ListViewRatingNameFragment());
-        }
-        AdapterDoctor adapter = new AdapterDoctor(getActivity(), fragList, R.layout.fragment_list_view_rating_name);
+        AdapterDoctor adapter = new AdapterDoctor(getActivity(), Controller.getListViewRatingNameFragments(), R.layout.fragment_list_view_rating_name);
         listView.setAdapter(adapter);
         return view;
     }
     public void onClick(View view){
-        startActivity(new Intent(getContext(), SearchDoctor.class));
+        startActivity(new Intent(getContext(), SearchDoctorActivity.class));
     }
 }

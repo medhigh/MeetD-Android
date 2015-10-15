@@ -26,9 +26,6 @@ public class AppointmentDetailsActivity extends AppCompatActivity {
     @Bind(R.id.navigation)
     NavigationView navigationView;
 
-
-    List<DoctorAppointmentFragment> fragmentList;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

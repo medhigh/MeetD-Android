@@ -21,7 +21,7 @@ import butterknife.ButterKnife;
 /**
  * Created by medhigh on 08.10.15.
  */
-public class SearchDoctor extends AppCompatActivity {
+public class SearchDoctorActivity extends AppCompatActivity {
     @Bind(R.id.toolbar)
     android.support.v7.widget.Toolbar toolbar;
     @Bind(R.id.drawer_layout)

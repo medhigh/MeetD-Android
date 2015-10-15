@@ -4,6 +4,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
+import com.example.medhigh.meetmd.control.keepers.Controller;
+
 /**
  * Created by med_high on 09.10.2015.
  */
@@ -24,10 +26,7 @@ public class TabsPagerDoctorFragmentAdapterSingleton extends FragmentPagerAdapte
 
     private TabsPagerDoctorFragmentAdapterSingleton(FragmentManager fm) {
         super(fm);
-        fragments = new Fragment[3];
-        fragments[0] = new SearchDoctorShortInfo();
-        fragments[1] = new SearchDoctorShortInfo();
-        fragments[2] = new SearchDoctorShortInfo();
+        fragments= (Fragment[]) Controller.getSearchDoctorShortInfoFragments().toArray();
     }
 
     @Override

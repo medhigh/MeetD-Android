@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.ListView;
 
 import com.example.medhigh.meetmd.control.adapters.AdapterDoctor;
+import com.example.medhigh.meetmd.control.keepers.Controller;
 import com.example.medhigh.meetmd.control.navigation.NavigationItemSelectedListener;
 import com.example.medhigh.meetmd.R;
 
@@ -40,11 +41,7 @@ public class SurveyActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         initToolbar();
         initNavigationView();
-        ArrayList<Fragment> fragList = new ArrayList<Fragment>();
-        for (int i = 0; i < 10; i++) {
-            fragList.add(new SurveyDoctorFragment());
-        }
-        AdapterDoctor adapter = new AdapterDoctor(this, fragList,R.layout.fragment_survey_doctor);
+        AdapterDoctor adapter = new AdapterDoctor(this, Controller.getSurveyDoctorFragments(),R.layout.fragment_survey_doctor);
         listView.setAdapter(adapter);
     }
 
