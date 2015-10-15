@@ -1,15 +1,16 @@
 package com.example.medhigh.meetmd.trashTest;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
-
-import com.Wsdl2Code.WebServices.ServiceProviderBinding.AuthtokenXml;
-import com.Wsdl2Code.WebServices.ServiceProviderBinding.PatientBinding;
 import com.example.medhigh.meetmd.R;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import soap.wcf.AuthtokenXml;
+import soap.wcf.PatientBinding;
+import soap.wcf.ServiceProviderBinding;
 
 public class Test extends AppCompatActivity {
     @Bind(R.id.testText)
@@ -19,8 +20,27 @@ public class Test extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.test);
         ButterKnife.bind(this);
-        PatientBinding patientBinding =new PatientBinding();
-        AuthtokenXml token = patientBinding.PatientLogin("number123","test123");
-        //textView.setText(token.token);
+        RetrieveFeedTask task =new RetrieveFeedTask();
+        task.execute();
+    }
+    class RetrieveFeedTask extends AsyncTask<Void, Void, AuthtokenXml> {
+
+        protected AuthtokenXml doInBackground(Void... v) {
+            try {
+                ServiceProviderBinding serviceProviderBinding =new ServiceProviderBinding();
+                 return  serviceProviderBinding.ProviderLogin("doctor1@meetmd.com","test123");
+//                PatientBinding service=new PatientBinding();
+//                return service.PatientLogin("number123", "test123");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+
+        protected void onPostExecute(AuthtokenXml xml) {
+            if (xml != null) {
+                textView.setText(xml.Token);
+            }
+        }
     }
 }
