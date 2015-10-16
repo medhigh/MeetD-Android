@@ -26,7 +26,11 @@ public class TabsPagerDoctorFragmentAdapterSingleton extends FragmentPagerAdapte
 
     private TabsPagerDoctorFragmentAdapterSingleton(FragmentManager fm) {
         super(fm);
-        fragments= (Fragment[]) Controller.getSearchDoctorShortInfoFragments().toArray();
+        //TODO OMFG TODO!!!!!
+        fragments = new Fragment[3];
+        fragments[0]= (Fragment) Controller.getSearchDoctorShortInfoFragments().toArray()[0];
+        fragments[1]= (Fragment) Controller.getSearchDoctorShortInfoFragments().toArray()[0];
+        fragments[2]= (Fragment) Controller.getSearchDoctorShortInfoFragments().toArray()[0];
     }
 
     @Override

@@ -47,6 +47,6 @@ public class Controller {
         return DummyContent.getInitFragments((new SurveyDoctorFragment()).getClass(),10);
     }
     public static List<Fragment> getSearchDoctorShortInfoFragments(){
-        return DummyContent.getInitFragments((new SearchDoctorShortInfo()).getClass(),3);
+        return DummyContent.getInitFragments((new SearchDoctorShortInfo()).getClass(),1);
     }
 }
