@@ -17,6 +17,7 @@ import com.example.medhigh.meetmd.R;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import in.flashbulb.coloredratingbar.ColoredRatingBar;
 
 /**
  * Created by medhigh on 07.10.15.
@@ -29,15 +30,15 @@ public class InformationActivity extends AppCompatActivity {
     @Bind(R.id.navigation)
     NavigationView navigationView;
     @Bind(R.id.rating0)
-    RatingBar ratingBar0;
+    ColoredRatingBar ratingBar0;
     @Bind(R.id.rating1)
-    RatingBar ratingBar1;
+    ColoredRatingBar ratingBar1;
     @Bind(R.id.rating2)
-    RatingBar ratingBar2;
+    ColoredRatingBar ratingBar2;
     @Bind(R.id.rating3)
-    RatingBar ratingBar3;
+    ColoredRatingBar ratingBar3;
     @Bind(R.id.rating4)
-    RatingBar ratingBar4;
+    ColoredRatingBar ratingBar4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,20 +50,7 @@ public class InformationActivity extends AppCompatActivity {
     }
 
     public void initRatingBar() {
-//        starsSetColor(ratingBar0);
-//        starsSetColor(ratingBar1);
-//        starsSetColor(ratingBar2);
-//        starsSetColor(ratingBar3);
-//        starsSetColor(ratingBar4);
-    }
-    private void starsSetColor(RatingBar ratingBar){
-        LayerDrawable stars = (LayerDrawable) ratingBar.getProgressDrawable();
-        stars.getDrawable(2).setColorFilter(Color.parseColor("#26ce61"),
-                PorterDuff.Mode.SRC_ATOP); // for filled stars
-        stars.getDrawable(1).setColorFilter(Color.parseColor("#FFFF00"),
-                PorterDuff.Mode.SRC_ATOP); // for half filled stars
-        stars.getDrawable(0).setColorFilter(Color.CYAN,
-                PorterDuff.Mode.SRC_ATOP); // for empty stars
+
     }
 
     public void initNavigationView() {

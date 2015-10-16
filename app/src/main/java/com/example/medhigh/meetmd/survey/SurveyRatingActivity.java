@@ -28,7 +28,7 @@ public class SurveyRatingActivity extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.acivity_information);
+        setContentView(R.layout.activity_survey_rating);
         ButterKnife.bind(this);
         initToolbar();
         initNavigationView();

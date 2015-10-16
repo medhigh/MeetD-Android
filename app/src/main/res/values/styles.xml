@@ -8,6 +8,7 @@
         <item name="colorAccent">@color/black</item>
         <item name="android:colorForeground">@color/black</item>
         <item name="android:windowBackground">@android:color/transparent</item>
+
     </style>
     <style name="AppTheme2" parent="ThemeOverlay.AppCompat.Dark">
         <!-- Customize your theme here. -->
@@ -19,6 +20,7 @@
         <item name="android:textColor">@color/black</item>
         <item name="android:calendarViewShown">@color/black</item>
         <item name="android:calendarViewStyle">@color/black</item>
+
     </style>
 
     <style name="TextTheme" parent="@style/Theme.AppCompat.NoActionBar">
@@ -52,9 +54,29 @@
         <item name="android:textColor">@color/mcv_text_date_light</item>
     </style>
 
-    <style name="StarRatingBar" parent="@android:style/Widget.RatingBar">
-        <item name="android:progressDrawable">@drawable/ratingbar_selector_images</item>
-        <item name="android:secondaryProgress">5</item>
-        <item name="android:background">@drawable/ratingbar_selector_images</item>
+    <style name="coloredRatingBarStyle">
+        <item name="indicator">false</item>
+        <item name="type">normal</item>
     </style>
+
+    <style name="coloredRatingBarStyleIndicator">
+        <item name="indicator">true</item>
+        <item name="type">normal</item>
+    </style>
+
+    <style name="coloredRatingBarStyleSmall">
+        <item name="indicator">false</item>
+        <item name="type">small</item>
+    </style>
+
+    <style name="coloredRatingBarStyleSmallIndicator">
+        <item name="indicator">true</item>
+        <item name="type">small</item>
+    </style>
+
+
+
+
+
+
 </resources>

@@ -23,10 +23,6 @@ import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-
-/**
- * Created by medhigh on 08.10.15.
- */
 public class DoctorChooseTimeActivity extends AppCompatActivity implements WeekView.MonthChangeListener{
 
     @Bind(R.id.toolbar)
