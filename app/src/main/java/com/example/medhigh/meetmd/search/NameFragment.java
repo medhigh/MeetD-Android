@@ -4,9 +4,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.text.method.CharacterPickerDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
@@ -21,10 +23,12 @@ import butterknife.ButterKnife;
  * Created by medhigh on 08.10.15.
  */
 public class NameFragment extends Fragment {
-    @Bind(R.id.editTextSearchField)
+    @Bind(R.id.editText)
     EditText editTextSearchField;
     @Bind(R.id.listView)
     ListView listView;
+    @Bind(R.id.clearEditText)
+    Button button;
 
     @Nullable
     @Override
@@ -33,9 +37,12 @@ public class NameFragment extends Fragment {
         ButterKnife.bind(this, view);
         AdapterDoctor adapter = new AdapterDoctor(getActivity(), Controller.getListViewRatingNameFragments(), R.layout.fragment_list_view_rating_name);
         listView.setAdapter(adapter);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editTextSearchField.setText("");
+            }
+        });
         return view;
-    }
-    public void onClick(View view){
-        startActivity(new Intent(getContext(), SearchDoctorActivity.class));
     }
 }

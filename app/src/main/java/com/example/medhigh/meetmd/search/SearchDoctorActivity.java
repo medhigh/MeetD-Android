@@ -46,10 +46,12 @@ public class SearchDoctorActivity extends AppCompatActivity {
         TabsPagerFragmentAdapterSingleton adapter = TabsPagerFragmentAdapterSingleton.getInstance(getSupportFragmentManager());
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
+        viewPager.computeScroll();
     }
 
     public void initNavigationView() {
-        navigationView.setNavigationItemSelectedListener(new NavigationItemSelectedListener(drawerLayout,this));
+        NavigationItemSelectedListener listener = new NavigationItemSelectedListener(drawerLayout,this);
+        navigationView.setNavigationItemSelectedListener(listener);
         navigationView.setItemTextAppearance(R.style.TextTheme);
         toolbar.setNavigationIcon(R.drawable.menu);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, 0, 0);

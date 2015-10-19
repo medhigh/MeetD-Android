@@ -9,13 +9,11 @@
     android:fitsSystemWindows="true"
     app:popupTheme="@style/AppTheme"
     tools:context=".DoctorChooseTimeActivity">
-    <android.support.design.widget.CoordinatorLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/windowBackground">
+        android:background="@color/windowBackground"
+        >
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
@@ -46,15 +44,17 @@
             app:tabSelectedTextColor="@color/colorPrimary"
             app:tabTextColor="@color/black"
             app:tabGravity="fill"
+
             />
 
         <android.support.v4.view.ViewPager
             android:id="@+id/viewPager"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            app:layout_scrollFlags="scroll|enterAlways"
             />
     </android.support.design.widget.AppBarLayout>
-    </android.support.design.widget.CoordinatorLayout>
+
 
     <android.support.design.widget.NavigationView
         android:id="@+id/navigation"

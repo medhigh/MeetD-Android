@@ -32,6 +32,7 @@ public class WeekChooseFragment extends Fragment implements WeekView.MonthChange
         View view = inflater.inflate(R.layout.fragment_week_choose, container, false);
         ButterKnife.bind(this, view);
         weekView.setMonthChangeListener(this);
+        weekView.setXScrollingSpeed(0);
         return view;
     }
     @Override

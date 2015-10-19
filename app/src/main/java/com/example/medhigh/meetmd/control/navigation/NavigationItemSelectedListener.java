@@ -1,10 +1,16 @@
 package com.example.medhigh.meetmd.control.navigation;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.view.DragEvent;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.Toast;
 
 import com.example.medhigh.meetmd.R;
 import com.example.medhigh.meetmd.appointments.ApointmentsActivity;
@@ -22,6 +28,30 @@ public class NavigationItemSelectedListener implements NavigationView.OnNavigati
     public NavigationItemSelectedListener(DrawerLayout dl,AppCompatActivity ac) {
         drawerLayout = dl;
         activity = ac;
+        drawerLayout.setDrawerListener(new DrawerLayout.DrawerListener() {
+            @Override
+            public void onDrawerSlide(View drawerView, float slideOffset) {
+                InputMethodManager inputMethodManager = (InputMethodManager) activity
+                        .getSystemService(Activity.INPUT_METHOD_SERVICE);
+                inputMethodManager.hideSoftInputFromWindow(
+                        activity.getCurrentFocus().getWindowToken(),0);
+            }
+
+            @Override
+            public void onDrawerOpened(View drawerView) {
+
+            }
+
+            @Override
+            public void onDrawerClosed(View drawerView) {
+
+            }
+
+            @Override
+            public void onDrawerStateChanged(int newState) {
+
+            }
+        });
     }
 
     @Override

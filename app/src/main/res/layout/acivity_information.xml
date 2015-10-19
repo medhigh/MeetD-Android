@@ -33,6 +33,11 @@
                 android:textColor="@color/white"
                 android:textStyle="normal" />
         </android.support.v7.widget.Toolbar>
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+
         <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:orientation="vertical"
             android:layout_width="fill_parent"
@@ -120,7 +125,7 @@
                         xmlns:rb="http://schemas.android.com/apk/res-auto"
                         android:layout_gravity="center"
                         android:id="@+id/rating0"
-                        style="@style/coloredRatingBarStyle"
+                        style="@style/coloredRatingBarStyleIndicator"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         rb:rating="3.2"
@@ -233,6 +238,7 @@
 
             </LinearLayout>
         </RelativeLayout>
+        </ScrollView>
     </android.support.design.widget.AppBarLayout>
 
 

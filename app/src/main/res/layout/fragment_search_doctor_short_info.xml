@@ -16,8 +16,8 @@
         android:id="@+id/doctorImage"
         android:src="@drawable/revolver"
         android:layout_marginLeft="0dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
@@ -37,8 +37,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/speciality"
-        android:layout_marginTop="25dp"
-        android:text="Speciality: Oculist"
+        android:layout_marginTop="12dp"
+        android:text="Oculist"
         android:textColor="@color/black"
         android:layout_below="@+id/doctorName"
         android:layout_alignLeft="@+id/doctorName"
@@ -46,33 +46,19 @@
         android:textSize="17sp" />
 
 
-    <RatingBar
-        android:id="@+id/rating0"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:layout_marginBottom="3dp"
-        android:layout_marginRight="-10dp"
-        android:numStars="5"
-        android:rating="5"
+        <in.flashbulb.coloredratingbar.ColoredRatingBar
         android:isIndicator="true"
-        style="?android:attr/ratingBarStyleSmall"
-        android:layout_alignBottom="@+id/textView6"
-        android:layout_alignRight="@+id/speciality"
-        android:layout_alignEnd="@+id/speciality"
-        />
-
-    <TextView
+        xmlns:rb="http://schemas.android.com/apk/res-auto"
+        android:layout_gravity="center"
+        android:id="@+id/rating0"
+        style="@style/coloredRatingBarStyleSmallIndicator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:text="@string/rating"
-        android:id="@+id/textView6"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        android:textIsSelectable="false"
+        rb:rating="3.2"
         android:layout_below="@+id/speciality"
         android:layout_alignLeft="@+id/speciality"
-        android:layout_alignStart="@+id/speciality" />
+        android:layout_alignStart="@+id/speciality"
+        android:layout_marginTop="20dp" />
 
     <ImageView
         android:layout_width="wrap_content"

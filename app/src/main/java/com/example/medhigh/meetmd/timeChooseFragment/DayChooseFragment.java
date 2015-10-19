@@ -26,6 +26,7 @@ public class DayChooseFragment extends WeekChooseFragment{
         View view = inflater.inflate(R.layout.fragment_day_choose,container,false);
         ButterKnife.bind(this, view);
         WeekView.setMonthChangeListener(this);
+        WeekView.setXScrollingSpeed(0);
         return view;
     }
 }

@@ -11,17 +11,17 @@
         android:layout_height="match_parent"
         android:onClick="onClick">
 
-        <RatingBar
+        <in.flashbulb.coloredratingbar.ColoredRatingBar
             android:id="@+id/rating"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-
-            android:layout_marginLeft="50dp"
-            android:layout_marginTop="10dp"
-            android:numStars="5"
-            android:rating="5"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="2dp"
             android:isIndicator="true"
-            style="?android:attr/ratingBarStyleSmall"
+            xmlns:rb="http://schemas.android.com/apk/res-auto"
+            android:layout_gravity="center"
+            style="@style/coloredRatingBarStyleSmallIndicator"
+            rb:rating="4.8"
             />
 
         <TextView
@@ -30,7 +30,7 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="@string/name"
             android:id="@+id/textViewName"
-            android:textSize="26sp"
+            android:textSize="18sp"
             android:layout_marginLeft="20dp"
             android:textColor="@color/black" />
 
