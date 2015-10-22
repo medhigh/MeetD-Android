@@ -1,20 +1,28 @@
 package com.example.medhigh.meetmd.search;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
-import com.example.medhigh.meetmd.control.adapters.AdapterDoctor;
 import com.example.medhigh.meetmd.R;
+import com.example.medhigh.meetmd.appointments.AppointmentConfirmActivity;
+import com.example.medhigh.meetmd.control.adapters.AdapterServiceProvider;
 import com.example.medhigh.meetmd.control.keepers.Controller;
+import com.example.medhigh.meetmd.control.model.SearchModel;
 
-import java.util.ArrayList;
+import java.lang.reflect.Field;
 import java.util.List;
 
 import butterknife.Bind;
@@ -30,12 +38,61 @@ public class SpecialityFragment extends Fragment {
     ListView listView;
     @Bind(R.id.clearEditText)
     Button button;
+
+    List<Fragment> list;
+    AdapterServiceProvider adapter;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view =inflater.inflate(R.layout.fragment_search_speciality,container,false);
         ButterKnife.bind(this, view);
-        AdapterDoctor adapter = new AdapterDoctor(getActivity(), Controller.getListViewRatingNameFragments(), R.layout.fragment_list_view_name);
+        list = Controller.getListViewSpecialityFragments("");
+        adapter = new AdapterServiceProvider(getActivity(), list, R.layout.fragment_list_view_name);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                SearchModel.setPickedProvider(position);
+                startActivity(new Intent(getActivity(), AppointmentConfirmActivity.class).addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT));
+            }
+        });
+        editTextSearchField.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                {
+                    list = Controller.getListViewRatingNameFragments(s.toString());
+                    adapter.clear();
+                    adapter.addAll(list);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+        editTextSearchField.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (!hasFocus) {
+                    hideKeyboard();
+                }
+            }
+
+            private void hideKeyboard() {
+                if (editTextSearchField != null) {
+                    InputMethodManager imanager = (InputMethodManager) getActivity()
+                            .getSystemService(Context.INPUT_METHOD_SERVICE);
+                    imanager.hideSoftInputFromWindow(editTextSearchField.getWindowToken(), 0);
+
+                }
+
+            }
+        });
         listView.setAdapter(adapter);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,5 +101,20 @@ public class SpecialityFragment extends Fragment {
             }
         });
         return view;
+    }
+    @Override
+    public void onDetach() {
+        super.onDetach();
+
+        try {
+            Field childFragmentManager = Fragment.class.getDeclaredField("mChildFragmentManager");
+            childFragmentManager.setAccessible(true);
+            childFragmentManager.set(this, null);
+
+        } catch (NoSuchFieldException e) {
+            throw new RuntimeException(e);
+        } catch (IllegalAccessException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

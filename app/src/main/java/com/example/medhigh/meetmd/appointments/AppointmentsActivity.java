@@ -3,7 +3,6 @@ package com.example.medhigh.meetmd.appointments;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
-import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -11,19 +10,20 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.ListView;
 
-import com.example.medhigh.meetmd.control.adapters.AdapterDoctor;
+import com.example.medhigh.meetmd.R;
+import com.example.medhigh.meetmd.control.adapters.AdapterServiceProvider;
 import com.example.medhigh.meetmd.control.keepers.Controller;
 import com.example.medhigh.meetmd.control.navigation.NavigationItemSelectedListener;
-import com.example.medhigh.meetmd.R;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-
-public class ApointmentsActivity extends AppCompatActivity {
+/**
+ * Class for view list of appointments and payment information
+ */
+public class AppointmentsActivity extends AppCompatActivity {
     @Bind(R.id.toolbar)
     android.support.v7.widget.Toolbar toolbar;
     @Bind(R.id.drawer_layout)
@@ -42,11 +42,11 @@ public class ApointmentsActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         initToolbar();
         initNavigationView();
-        AdapterDoctor adapter = new AdapterDoctor(this, Controller.getDoctorAppointmentFragments(), R.layout.fragment_doctor_apointment);
+        AdapterServiceProvider adapter = new AdapterServiceProvider(this, Controller.getDoctorAppointmentFragments(), R.layout.fragment_doctor_apointment);
         listView.setAdapter(adapter);
     }
     public void onClick(View view){
-        startActivity(new Intent(getApplicationContext(), AppointmentDetailsActivity.class));
+        startActivity(new Intent(getApplicationContext(), AppointmentDetailsActivity.class).addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT));
     }
 
     public void initToolbar() {}

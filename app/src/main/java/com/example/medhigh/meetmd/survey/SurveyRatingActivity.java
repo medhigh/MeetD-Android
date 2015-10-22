@@ -8,14 +8,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.View;
 
-import com.example.medhigh.meetmd.control.navigation.NavigationItemSelectedListener;
 import com.example.medhigh.meetmd.R;
+import com.example.medhigh.meetmd.control.navigation.NavigationItemSelectedListener;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
 /**
- * Created by med_high on 09.10.2015.
+ * Class for inner rating choose Activity by Patient wish.
+ * Contains Information about Service Provider, Meet and list of rating bars
  */
 public class SurveyRatingActivity extends AppCompatActivity{
     @Bind(R.id.toolbar)

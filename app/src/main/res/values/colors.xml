@@ -11,4 +11,5 @@
     <color name="event_color_02">#000</color>
     <color name="event_color_03">#000</color>
     <color name="event_color_04">#000</color>
+    <color name="calendar_divider">#000</color>
 </resources>

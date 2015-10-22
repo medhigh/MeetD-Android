@@ -8,14 +8,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.View;
 
-import com.example.medhigh.meetmd.control.navigation.NavigationItemSelectedListener;
 import com.example.medhigh.meetmd.R;
+import com.example.medhigh.meetmd.control.navigation.NavigationItemSelectedListener;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
 /**
- * Created by medhigh on 07.10.15.
+ * Main Reminder main activity. User can view existing
+ * reminders and set up new in next activity.
  */
 public class ReminderActivity extends AppCompatActivity {
     @Bind(R.id.toolbar)

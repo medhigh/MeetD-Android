@@ -10,18 +10,17 @@ import android.view.ViewGroup;
 import com.alamkanak.weekview.WeekView;
 import com.alamkanak.weekview.WeekViewEvent;
 import com.example.medhigh.meetmd.R;
-import java.text.SimpleDateFormat;
+
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.List;
-
 import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
 /**
- * Created by medhigh on 08.10.15.
+ * Week chose fragment contents several days of service provider agenda
  */
 public class WeekChooseFragment extends Fragment implements WeekView.MonthChangeListener{
     @Bind(R.id.weekView)
@@ -34,6 +33,21 @@ public class WeekChooseFragment extends Fragment implements WeekView.MonthChange
         weekView.setMonthChangeListener(this);
         weekView.setXScrollingSpeed(0);
         return view;
+    }
+    @Override
+    public void onDetach() {
+        super.onDetach();
+
+        try {
+            Field childFragmentManager = Fragment.class.getDeclaredField("mChildFragmentManager");
+            childFragmentManager.setAccessible(true);
+            childFragmentManager.set(this, null);
+
+        } catch (NoSuchFieldException e) {
+            throw new RuntimeException(e);
+        } catch (IllegalAccessException e) {
+            throw new RuntimeException(e);
+        }
     }
     @Override
     public List<WeekViewEvent> onMonthChange(int newYear, int newMonth) {

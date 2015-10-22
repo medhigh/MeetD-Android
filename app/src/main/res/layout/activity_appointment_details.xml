@@ -25,15 +25,15 @@
                 android:gravity="center">
 
                 <TextView
+                    android:id="@+id/toolbar_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/appointments_title"
                     android:layout_gravity="center"
-                    android:id="@+id/toolbar_title"
                     android:focusableInTouchMode="false"
+                    android:text="@string/appointments_title"
+                    android:textColor="@color/white"
                     android:textIsSelectable="false"
                     android:textSize="24sp"
-                    android:textColor="@color/white"
                     android:textStyle="normal" />
             </android.support.v7.widget.Toolbar>
             <LinearLayout
@@ -43,134 +43,134 @@
                 android:background="@color/white"
                 android:orientation="vertical">
                 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                    android:orientation="vertical"
+                    android:id="@+id/relativeLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:longClickable="false"
                     android:background="#fff"
-                    android:id="@+id/relativeLayout">
+                    android:longClickable="false"
+                    android:orientation="vertical">
 
                     <ImageView
-                        android:scaleType="fitXY"
+                        android:id="@+id/doctorImage"
                         android:layout_width="120dp"
                         android:layout_height="120dp"
-                        android:id="@+id/doctorImage"
-                        android:src="@drawable/revolver"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
                         android:layout_marginLeft="0dp"
                         android:layout_marginStart="32dp"
                         android:layout_marginTop="32dp"
-                        android:layout_alignParentTop="true"
-                        android:layout_alignParentLeft="true"
-                        android:layout_alignParentStart="true" />
+                        android:scaleType="fitXY"
+                        android:src="@drawable/revolver" />
 
                     <TextView
+                        android:id="@+id/doctorName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/doctorName"
                         android:layout_alignTop="@+id/doctorImage"
-                        android:layout_toRightOf="@+id/doctorImage"
                         android:layout_marginLeft="20dp"
-                        android:text="Paul Eddison"
+                        android:layout_toRightOf="@+id/doctorImage"
                         android:selectAllOnFocus="false"
+                        android:text="Paul Eddison"
                         android:textColor="@color/black"
                         android:textSize="20sp" />
                     <TextView
+                        android:id="@+id/speciality"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/speciality"
+                        android:layout_alignLeft="@+id/doctorName"
+                        android:layout_alignStart="@+id/doctorName"
+                        android:layout_below="@+id/doctorName"
                         android:layout_marginTop="25dp"
                         android:text="Speciality: Oculist"
                         android:textColor="@color/black"
-                        android:layout_below="@+id/doctorName"
-                        android:layout_alignLeft="@+id/doctorName"
-                        android:layout_alignStart="@+id/doctorName"
                         android:textSize="17sp" />
 
 
                     <RatingBar
                         android:id="@+id/rating0"
-                        android:layout_height="wrap_content"
+                        style="?android:attr/ratingBarStyleSmall"
                         android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/textView6"
+                        android:layout_alignEnd="@+id/speciality"
+                        android:layout_alignRight="@+id/speciality"
                         android:layout_marginBottom="3dp"
                         android:layout_marginRight="-10dp"
-                        android:numStars="5"
-                        android:rating="5"
                         android:isIndicator="true"
-                        style="?android:attr/ratingBarStyleSmall"
-                        android:layout_alignBottom="@+id/textView6"
-                        android:layout_alignRight="@+id/speciality"
-                        android:layout_alignEnd="@+id/speciality" />
+                        android:numStars="5"
+                        android:rating="5" />
 
                     <TextView
+                        android:id="@+id/textView6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_alignLeft="@+id/speciality"
+                        android:layout_alignStart="@+id/speciality"
+                        android:layout_below="@+id/speciality"
                         android:layout_marginTop="25dp"
                         android:text="@string/rating"
-                        android:id="@+id/textView6"
                         android:textColor="@color/black"
-                        android:textSize="18sp"
                         android:textIsSelectable="false"
-                        android:layout_below="@+id/speciality"
-                        android:layout_alignLeft="@+id/speciality"
-                        android:layout_alignStart="@+id/speciality" />
+                        android:textSize="18sp" />
 
                 </RelativeLayout>
 
                 <TextView
+                    android:id="@+id/date"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="32dp"
                     android:layout_marginTop="10dp"
-                    android:id="@+id/date"
-                    android:textSize="20sp"
+                    android:text="Date: 22 cotober 2015"
                     android:textColor="@color/black"
-                    android:text="Date: 22 cotober 2015" />
+                    android:textSize="20sp" />
 
                 <TextView
+                    android:id="@+id/time"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/time"
                     android:layout_marginLeft="32dp"
                     android:layout_marginTop="10dp"
                     android:text="Time: 13:00 - 13:30"
                     android:textColor="@color/black"
-                    android:textSize="20sp"
-                    android:textIsSelectable="false" />
+                    android:textIsSelectable="false"
+                    android:textSize="20sp" />
 
                 <TextView
+                    android:id="@+id/location"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="32dp"
-                    android:id="@+id/location"
                     android:text="Location: San Luchia 08854, Rio Grande hospital, Colorado street 23"
                     android:textColor="@color/black"
                     android:textSize="18sp"/>
 
                 <LinearLayout
-                    android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center">
+                    android:gravity="center"
+                    android:orientation="horizontal">
 
                     <Button
+                        android:id="@+id/change"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/change_btn"
-                        android:id="@+id/button"
                         android:background="@color/white"
-                        android:textColor="@color/colorPrimary"
                         android:onClick="onClickChange"
+                        android:text="@string/change_btn"
+                        android:textColor="@color/colorPrimary"
                         />
 
                     <Button
+                        android:id="@+id/cancel"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/cancel"
                         android:layout_marginLeft="32dp"
-                        android:id="@+id/button2"
                         android:background="@color/white"
-                        android:textColor="@color/colorPrimary"
                         android:onClick="onClickCancel"
+                        android:text="@string/cancel"
+                        android:textColor="@color/colorPrimary"
                         />
                 </LinearLayout>
 

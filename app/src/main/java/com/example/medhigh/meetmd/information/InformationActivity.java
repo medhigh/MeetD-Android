@@ -1,8 +1,5 @@
 package com.example.medhigh.meetmd.information;
 
-import android.graphics.Color;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.LayerDrawable;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
@@ -10,17 +7,16 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.View;
-import android.widget.RatingBar;
 
-import com.example.medhigh.meetmd.control.navigation.NavigationItemSelectedListener;
 import com.example.medhigh.meetmd.R;
+import com.example.medhigh.meetmd.control.navigation.NavigationItemSelectedListener;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import in.flashbulb.coloredratingbar.ColoredRatingBar;
 
 /**
- * Created by medhigh on 07.10.15.
+ * ViewController class for activity to get detail information about ServiceProvider
  */
 public class InformationActivity extends AppCompatActivity {
     @Bind(R.id.toolbar)

@@ -1,33 +1,31 @@
 package com.example.medhigh.meetmd.control.adapters;
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.annotation.LayoutRes;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Toast;
 
 import java.util.List;
 
 /**
- * Created by medhigh on 07.10.15.
+ * Dummy Adapter Fragment class for non-real content
  */
-public class AdapterDoctor extends ArrayAdapter<Fragment> {
+public class AdapterServiceProvider extends ArrayAdapter<Fragment> {
     Context c;
     List<Fragment> f;
     int layout;
 
-    public AdapterDoctor(Context c, List<Fragment> f,@LayoutRes int layout) {
+    public AdapterServiceProvider(Context c, List<Fragment> f, @LayoutRes int layout) {
         super(c, layout, f);
         this.layout = layout;
         this.c = c;
         this.f = f;
     }
 
+    // View Holder pattern will be added after core connection
     @Override
     public View getView(int pos, View v, ViewGroup vg) {
         LayoutInflater i = (LayoutInflater) c.getSystemService(Context.LAYOUT_INFLATER_SERVICE);

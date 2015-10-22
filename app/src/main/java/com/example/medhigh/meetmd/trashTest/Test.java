@@ -4,14 +4,17 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
+
 import com.example.medhigh.meetmd.R;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import soap.wcf.AuthtokenXml;
-import soap.wcf.PatientBinding;
 import soap.wcf.ServiceProviderBinding;
 
+/**
+ * Temporary test class for core connection usage
+ */
 public class Test extends AppCompatActivity {
     @Bind(R.id.testText)
     TextView textView;

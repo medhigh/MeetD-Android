@@ -13,9 +13,10 @@ import android.view.View;
 
 import com.alamkanak.weekview.WeekView;
 import com.alamkanak.weekview.WeekViewEvent;
-import com.example.medhigh.meetmd.information.InformationActivity;
-import com.example.medhigh.meetmd.control.navigation.NavigationItemSelectedListener;
 import com.example.medhigh.meetmd.R;
+import com.example.medhigh.meetmd.control.model.SearchModel;
+import com.example.medhigh.meetmd.control.navigation.NavigationItemSelectedListener;
+import com.example.medhigh.meetmd.information.InformationActivity;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -23,6 +24,12 @@ import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+
+/**
+ * Main Activity for choosing time to Appointment
+ * Contains short description service Provider Fragment, in horizontal picking list
+ * Contains month week and day fragments in viewPager
+ */
 public class DoctorChooseTimeActivity extends AppCompatActivity implements WeekView.MonthChangeListener{
 
     @Bind(R.id.toolbar)
@@ -53,6 +60,9 @@ public class DoctorChooseTimeActivity extends AppCompatActivity implements WeekV
         tabLayout.setupWithViewPager(viewPager);
         TabsPagerDoctorFragmentAdapterSingleton adapterDoctor = TabsPagerDoctorFragmentAdapterSingleton.getInstance(getSupportFragmentManager());
         viewPagerDoctor.setAdapter(adapterDoctor);
+        if (viewPager != null) {
+            viewPager.setCurrentItem(SearchModel.getPickedProvider());
+        }
     }
 
     public void initNavigationView() {
@@ -70,18 +80,20 @@ public class DoctorChooseTimeActivity extends AppCompatActivity implements WeekV
         });
     }
 
+    /*
+    Intent on button info in Service provider Fragment
+     */
     public void onClickInfo(View view) {
-
-            startActivity(new Intent(getApplicationContext(), InformationActivity.class).addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT));
-
+        startActivity(new Intent(getApplicationContext(), InformationActivity.class).addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT));
     }
 
+    /*
+    Testing method for setting up week and day view pages
+     */
     @Override
     public List<WeekViewEvent> onMonthChange(int newYear, int newMonth) {
-
         // Populate the week view with some events.
         List<WeekViewEvent> events = new ArrayList<WeekViewEvent>();
-
         Calendar startTime = Calendar.getInstance();
         startTime.set(Calendar.HOUR_OF_DAY, 3);
         startTime.set(Calendar.MINUTE, 0);

@@ -18,6 +18,9 @@ import butterknife.Bind;
 import butterknife.BindString;
 import butterknife.ButterKnife;
 
+/**
+ * Main Patient App Activity. Contents of Insurance Number and SMS pass dialog with user.
+ */
 public class MainActivity extends AppCompatActivity implements EditText.OnEditorActionListener {
     @Bind(R.id.buttonLogin)
     Button loginBtn;
@@ -52,6 +55,15 @@ public class MainActivity extends AppCompatActivity implements EditText.OnEditor
         insuranceEditText.clearComposingText();
     }
 
+    /**
+     * On click login if insurance number is correct, user gets toast to
+     * enter SMS temporary password into appears fields.
+     * If IN is incorrect or mismatch, user gets toast to enter IN again.
+     * After entering correct SMS code view changes to enter new password
+     * activity.
+     *
+     * @param view
+     */
     public void onClickLogin(View view) {
 
         if (!smsSent) {
@@ -71,7 +83,6 @@ public class MainActivity extends AppCompatActivity implements EditText.OnEditor
             Editable e = insuranceEditText.getText();
             smsPassword = e.toString();
             if (ifSMSCorrect()) {
-                //TODO INTENT FORWARD HERE
                 //if user not exist yet
                 startActivity(new Intent(this, NewPasswordActivity.class).addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT));
             } else {
@@ -85,11 +96,19 @@ public class MainActivity extends AppCompatActivity implements EditText.OnEditor
             return true;
     }
 
+    /**
+     * Logic for check Insurance Number of user for mistakes
+     * @return true if IN is valid
+     */
     private boolean ifINCorrect() {
-        //TODO new threading logic for EN rules
+        //TODO new threading logic for IN rules
         return true;
     }
 
+    /**
+     * Logic for check SMS password on valid
+     * @return true if SMS password matches.
+     */
     private boolean ifSMSCorrect() {
         //TODO new threading logic for SMS rules
         return true;

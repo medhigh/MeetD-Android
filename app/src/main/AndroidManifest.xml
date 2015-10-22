@@ -7,6 +7,16 @@
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!--
+ The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but are recommended.
+    -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -14,51 +24,69 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".search.SearchDoctorActivity">
-
-        </activity>
-        <activity android:name=".login.MainActivity">
-
+        <activity
+            android:name=".search.SearchDoctorActivity"
+            android:windowSoftInputMode="stateHidden">
         </activity>
         <activity
-            android:name=".login.NewPasswordActivity"
-            android:label="@string/set_new_pass"/>
-        <activity
-            android:name=".appointments.ApointmentsActivity"
-            android:theme="@style/AppTheme"
-            android:label="@string/appointments_title">
-
-        </activity>
-        <activity android:name=".appointments.AppointmentDetailsActivity"
-            android:theme="@style/AppTheme"
-            android:label="@string/appointments">
-
-        </activity>
-        <activity android:name=".survey.SurveyActivity"
-            android:theme="@style/AppTheme"
-            android:label="@string/surveys">
-
-        </activity>
-        <activity android:name=".information.InformationActivity"
-            android:theme="@style/AppTheme"
-            android:label="@string/information">
-
-        </activity>
-        <activity android:name=".timeChooseFragment.DoctorChooseTimeActivity"
-            android:theme="@style/AppTheme">
+            android:name=".login.MainActivity"
+            android:windowSoftInputMode="stateHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".appointments.AppointmentConfirmActivity"/>
-        <activity android:name=".survey.SurveyRatingActivity"/>
-        <activity android:name=".news.NewsActivity">
+        <activity
+            android:name=".login.NewPasswordActivity"
+            android:label="@string/set_new_pass"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".appointments.AppointmentsActivity"
+            android:label="@string/appointments_title"
+            android:theme="@style/AppTheme">
+        </activity>
+        <activity
+            android:name=".appointments.AppointmentDetailsActivity"
+            android:label="@string/appointments"
+            android:theme="@style/AppTheme">
+        </activity>
+        <activity
+            android:name=".survey.SurveyActivity"
+            android:label="@string/surveys"
+            android:theme="@style/AppTheme">
+        </activity>
+        <activity
+            android:name=".information.InformationActivity"
+            android:label="@string/information"
+            android:theme="@style/AppTheme">
+        </activity>
+        <activity
+            android:name=".timeChooseFragment.DoctorChooseTimeActivity"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".appointments.AppointmentConfirmActivity" />
+        <activity android:name=".survey.SurveyRatingActivity" />
+        <activity android:name=".news.NewsActivity">
         </activity>
         <activity android:name=".trashTest.Test">
-
         </activity>
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/. 
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
     </application>
 
 </manifest>

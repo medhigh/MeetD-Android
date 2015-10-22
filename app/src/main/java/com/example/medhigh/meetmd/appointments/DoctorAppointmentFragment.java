@@ -13,9 +13,13 @@ import android.widget.TextView;
 
 import com.example.medhigh.meetmd.R;
 
+import java.lang.reflect.Field;
+
 import butterknife.Bind;
 
-
+/**
+ * View Class for Appointment Fragment with short information about meet
+ */
 public class DoctorAppointmentFragment extends Fragment {
 
     @Bind(R.id.relativeLayout)
@@ -42,7 +46,21 @@ public class DoctorAppointmentFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_doctor_apointment,container,false);
     }
+    @Override
+    public void onDetach() {
+        super.onDetach();
 
+        try {
+            Field childFragmentManager = Fragment.class.getDeclaredField("mChildFragmentManager");
+            childFragmentManager.setAccessible(true);
+            childFragmentManager.set(this, null);
+
+        } catch (NoSuchFieldException e) {
+            throw new RuntimeException(e);
+        } catch (IllegalAccessException e) {
+            throw new RuntimeException(e);
+        }
+    }
     public TextView getLocation() {
         return Location;
     }

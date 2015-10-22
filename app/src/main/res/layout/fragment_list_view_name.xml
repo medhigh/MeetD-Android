@@ -1,34 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="8dp">
+    android:layout_marginTop="8dp"
+    android:orientation="vertical">
 
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:onClick="onClickSpeciality">
+        android:orientation="horizontal">
+
 
         <TextView
+            android:id="@+id/textViewName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="35dp"
+            android:layout_marginRight="8dp"
+            android:text="@string/speciality"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/name"
-            android:id="@+id/textViewName"
-            android:textSize="26sp"
-            android:layout_marginLeft="138dp"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:textSize="18sp" />
 
     </LinearLayout>
 
     <LinearLayout
-        android:orientation="horizontal"
-        android:layout_marginLeft="135dp"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginTop="6dp"
-        android:background="#717171" />
+        android:background="#717171"
+        android:orientation="horizontal" />
 
 </LinearLayout>

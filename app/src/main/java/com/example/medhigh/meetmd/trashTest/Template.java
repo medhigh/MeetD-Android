@@ -15,7 +15,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 /**
- * Created by medhigh on 07.10.15.
+ * Temporary Template for new Activities
  */
 public class Template extends AppCompatActivity {
     @Bind(R.id.toolbar)

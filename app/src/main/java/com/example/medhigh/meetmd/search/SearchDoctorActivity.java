@@ -1,6 +1,5 @@
 package com.example.medhigh.meetmd.search;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
@@ -11,15 +10,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.View;
 
-import com.example.medhigh.meetmd.appointments.AppointmentConfirmActivity;
-import com.example.medhigh.meetmd.control.navigation.NavigationItemSelectedListener;
 import com.example.medhigh.meetmd.R;
+import com.example.medhigh.meetmd.control.navigation.NavigationItemSelectedListener;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
 /**
- * Created by medhigh on 08.10.15.
+ * Main View Class Controller for Search Service Provider
+ * Contains of fragment search by name/location/speciality
  */
 public class SearchDoctorActivity extends AppCompatActivity {
     @Bind(R.id.toolbar)
@@ -64,10 +63,10 @@ public class SearchDoctorActivity extends AppCompatActivity {
             }
         });
     }
-    public void onClick(View view){
-        startActivity(new Intent(this, AppointmentConfirmActivity.class).addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT));
-    }
-    public void onClickSpeciality(View view){
-        viewPager.setCurrentItem(0);
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        //SearchModel.clearLinks();
     }
 }

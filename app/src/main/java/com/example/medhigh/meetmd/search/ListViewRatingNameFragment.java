@@ -1,6 +1,5 @@
 package com.example.medhigh.meetmd.search;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -10,14 +9,15 @@ import android.view.ViewGroup;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
-import com.example.medhigh.meetmd.appointments.AppointmentConfirmActivity;
 import com.example.medhigh.meetmd.R;
+
+import java.lang.reflect.Field;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
 /**
- * Created by medhigh on 08.10.15.
+ * Fragment contains service provider name and rating bar
  */
 public class ListViewRatingNameFragment extends Fragment {
     @Bind(R.id.rating)
@@ -32,10 +32,22 @@ public class ListViewRatingNameFragment extends Fragment {
         ButterKnife.bind(this, view);
         return view;
     }
-    public void onClick(View view){
-        startActivity(new Intent(getContext(), AppointmentConfirmActivity.class).addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT));
-    }
 
+    @Override
+    public void onDetach() {
+        super.onDetach();
+
+        try {
+            Field childFragmentManager = Fragment.class.getDeclaredField("mChildFragmentManager");
+            childFragmentManager.setAccessible(true);
+            childFragmentManager.set(this, null);
+
+        } catch (NoSuchFieldException e) {
+            throw new RuntimeException(e);
+        } catch (IllegalAccessException e) {
+            throw new RuntimeException(e);
+        }
+    }
     public RatingBar getRating() {
         return rating;
     }

@@ -6,14 +6,20 @@ import android.support.v4.app.FragmentPagerAdapter;
 
 import com.example.medhigh.meetmd.control.keepers.Controller;
 
+import java.util.List;
+
 /**
- * Created by med_high on 09.10.2015.
+ * Fragment Adapter for dynamically set up List of Service Provider Fragments
  */
 public class TabsPagerDoctorFragmentAdapterSingleton extends FragmentPagerAdapter {
 
-
-    private Fragment[] fragments;
     private static TabsPagerDoctorFragmentAdapterSingleton adapter;
+    private List<Fragment> fragments;
+
+    private TabsPagerDoctorFragmentAdapterSingleton(FragmentManager fm) {
+        super(fm);
+        fragments = Controller.getSearchDoctorShortInfoFragments();
+    }
 
     public static TabsPagerDoctorFragmentAdapterSingleton getInstance(FragmentManager fm){
         if(adapter!=null){
@@ -24,35 +30,18 @@ public class TabsPagerDoctorFragmentAdapterSingleton extends FragmentPagerAdapte
         }
     }
 
-    private TabsPagerDoctorFragmentAdapterSingleton(FragmentManager fm) {
-        super(fm);
-        //TODO OMFG TODO!!!!!
-        fragments = new Fragment[3];
-        fragments[0]= (Fragment) Controller.getSearchDoctorShortInfoFragments().toArray()[0];
-        fragments[1]= (Fragment) Controller.getSearchDoctorShortInfoFragments().toArray()[0];
-        fragments[2]= (Fragment) Controller.getSearchDoctorShortInfoFragments().toArray()[0];
-    }
-
     @Override
     public int getCount() {
-        return 3;
+        return fragments.size();
     }
 
     @Override
     public CharSequence getPageTitle(int position) {
-        switch (position){
-            case 0:
-                return "SearchDoctorShortInfo";//fragments[0].getResources().getString(R.string.name);
-            case 1:
-                return "SearchDoctorShortInfo";//fragments[1].getResources().getString(R.string.speciality);
-            case 2:
-                return "SearchDoctorShortInfo";//fragments[2].getResources().getString(R.string.location);
-            default: return "SearchDoctorShortInfo";
-        }
+        return "Search Doctor Short Info";
     }
 
     @Override
     public Fragment getItem(int position) {
-        return fragments[position];
+        return fragments.get(position);
     }
 }

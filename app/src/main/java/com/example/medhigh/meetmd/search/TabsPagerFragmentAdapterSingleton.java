@@ -5,11 +5,20 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 /**
- * Created by medhigh on 08.10.15.
+ * Safe Extended FragmentPagerAdapter customized for Search service provider Activity ViewPager
+ * Contains 3 pages and 3 Fragments for search by /Name /Speciality /Location
  */
 public class TabsPagerFragmentAdapterSingleton extends FragmentPagerAdapter {
-    private Fragment[] fragments;
     private static TabsPagerFragmentAdapterSingleton adapter;
+    private Fragment[] fragments;
+
+    private TabsPagerFragmentAdapterSingleton(FragmentManager fm) {
+        super(fm);
+        fragments = new Fragment[3];
+        fragments[0] = new NameFragment();
+        fragments[1] = new SpecialityFragment();
+        fragments[2] = new GMapFragment();
+    }
 
     public static TabsPagerFragmentAdapterSingleton getInstance(FragmentManager fm){
         if(adapter!=null){
@@ -18,14 +27,6 @@ public class TabsPagerFragmentAdapterSingleton extends FragmentPagerAdapter {
             adapter = new TabsPagerFragmentAdapterSingleton(fm);
             return adapter;
         }
-    }
-
-    private TabsPagerFragmentAdapterSingleton(FragmentManager fm) {
-        super(fm);
-        fragments = new Fragment[3];
-        fragments[0] = new NameFragment();
-        fragments[1] = new SpecialityFragment();
-        fragments[2] = new MapFragment();
     }
 
     @Override

@@ -5,12 +5,20 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 /**
- * Created by med_high on 09.10.2015.
+ * Adapter for time choose fragment
  */
 public class TabsPagerFragmentAdapterSingleton extends FragmentPagerAdapter {
 
-    private Fragment[] fragments;
     private static TabsPagerFragmentAdapterSingleton adapter;
+    private Fragment[] fragments;
+
+    private TabsPagerFragmentAdapterSingleton(FragmentManager fm) {
+        super(fm);
+        fragments = new Fragment[3];
+        fragments[0] = new MonthChooseFragment();
+        fragments[1] = new WeekChooseFragment();
+        fragments[2] = new DayChooseFragment();
+    }
 
     public static TabsPagerFragmentAdapterSingleton getInstance(FragmentManager fm){
         if(adapter!=null){
@@ -19,14 +27,6 @@ public class TabsPagerFragmentAdapterSingleton extends FragmentPagerAdapter {
             adapter = new TabsPagerFragmentAdapterSingleton(fm);
             return adapter;
         }
-    }
-
-    private TabsPagerFragmentAdapterSingleton(FragmentManager fm) {
-        super(fm);
-        fragments = new Fragment[3];
-        fragments[0] = new MonthChooseFragment();
-        fragments[1] = new WeekChooseFragment();
-        fragments[2] = new DayChooseFragment();
     }
 
     @Override

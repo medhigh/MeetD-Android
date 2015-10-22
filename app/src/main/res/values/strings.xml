@@ -44,7 +44,7 @@
     <string name="overall">Overall:</string>
     <string name="search_doctor_header">SEARCH DOCTOR</string>
     <string name="name">Name</string>
-    <string name="speciality">Speciality</string>
+    <string name="speciality">Specialty</string>
     <string name="location">Location</string>
     <string name="search">Search:</string>
     <string name="rating">Rating:</string>
@@ -55,4 +55,12 @@
     <string name="survey">SURVEY</string>
     <string name="news_header">NEWS</string>
     <string name="reminder_header">REMINDER</string>
+    <string name="cancel_appointment">Cancel Appointment</string>
+    <string name="cancel_request">Are you sure you want to cancel this appointment?</string>
+    <string name="no">No</string>
+    <string name="yes">Yes</string>
+    <string name="choose_reason_of_cancel">Please choose the reason of cancel</string>
+    <string name="i_dont_need_a_doctor">I don\u0027t need a doctor anymore</string>
+    <string name="i_have_choosen_another_doctor">I have chosen another doctor</string>
+    <string name="appointment_not_cancelled">Error! Appointment not canceled</string>
 </resources>

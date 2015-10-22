@@ -2,7 +2,6 @@ package com.example.medhigh.meetmd.news;
 
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
-import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -10,18 +9,16 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.ListView;
 
-import com.example.medhigh.meetmd.control.adapters.AdapterDoctor;
+import com.example.medhigh.meetmd.R;
+import com.example.medhigh.meetmd.control.adapters.AdapterServiceProvider;
 import com.example.medhigh.meetmd.control.keepers.Controller;
 import com.example.medhigh.meetmd.control.navigation.NavigationItemSelectedListener;
-import com.example.medhigh.meetmd.R;
-
-import java.util.ArrayList;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
 /**
- * Created by medhigh on 07.10.15.
+ * Activity with list of views contains news
  */
 public class NewsActivity extends AppCompatActivity {
     @Bind(R.id.toolbar)
@@ -40,7 +37,8 @@ public class NewsActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         initToolbar();
         initNavigationView();
-        AdapterDoctor adapter = new AdapterDoctor(this, Controller.getNewsFragments(), R.layout.fragment_news);
+        //setting up adapter for fragments
+        AdapterServiceProvider adapter = new AdapterServiceProvider(this, Controller.getNewsFragments(), R.layout.fragment_news);
         listView.setAdapter(adapter);
     }
 

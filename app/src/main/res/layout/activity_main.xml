@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:popupTheme="@style/Theme.AppCompat.NoActionBar"
-    android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context=".MainActivity">
 
     <!-- Login progress -->
@@ -21,34 +21,34 @@
         android:visibility="gone" />
 
     <ImageView
+        android:id="@+id/doctorImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:adjustViewBounds="true"
-        android:maxHeight="500sp"
-        android:id="@+id/doctorImage"
-        android:src="@drawable/bb"
-        android:contentDescription="Logo"
-        android:scaleType="fitCenter"
         android:layout_alignParentTop="true"
+        android:adjustViewBounds="true"
+        android:contentDescription="Logo"
+        android:maxHeight="500sp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/bb"
          />
 
     <TextView
-        android:textColor="@color/black"
-        android:textSize="22sp"
+        android:id="@+id/insurence_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/insurance_number"
-        android:id="@+id/insurence_number"
-        android:layout_margin="5dp"
         android:layout_below="@+id/doctorImage"
+        android:layout_margin="5dp"
+        android:text="@string/insurance_number"
+        android:textColor="@color/black"
+        android:textSize="22sp"
          />
 
     <ScrollView
         android:id="@+id/login_form"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/insurence_number"
-        android:layout_alignParentBottom="true">
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/insurence_number">
 
         <LinearLayout
             android:id="@+id/email_login_form"
@@ -57,36 +57,37 @@
             android:orientation="vertical">
 
             <EditText
-                android:singleLine="true"
-                android:imeOptions="actionDone"
-                android:textColor="@color/black"
+                android:id="@+id/insuranceEditText"
+                style="@style/Base.V22.Theme.AppCompat"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:imeOptions="actionDone"
                 android:inputType="number"
-                android:id="@+id/insuranceEditText"
-                android:textSize="20sp"
-                style="@style/Base.V22.Theme.AppCompat"/>
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textColorHint="#828282"
+                android:textSize="20sp" />
         </LinearLayout>
     </ScrollView>
 
     <Button
-        android:background="@color/colorPrimary"
-        android:textColor="@color/white"
+        android:id="@+id/buttonLogin"
+        style="@style/Base.V22.Theme.AppCompat.Light"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/login"
-        android:id="@+id/buttonLogin"
-        android:clickable="true"
-        android:textSize="20sp"
-        style="@style/Base.V22.Theme.AppCompat.Light"
-        android:singleLine="false"
-        android:layout_marginTop="50dp"
-        android:layout_alignTop="@+id/login_form"
-        android:onClick="onClickLogin"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/login_form"
+        android:layout_marginTop="50dp"
+        android:background="@color/colorPrimary"
+        android:clickable="true"
+        android:onClick="onClickLogin"
+        android:singleLine="false"
+        android:text="@string/login"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
 
 
 </RelativeLayout>

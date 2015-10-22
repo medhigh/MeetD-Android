@@ -11,13 +11,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.medhigh.meetmd.R;
-import com.example.medhigh.meetmd.appointments.ApointmentsActivity;
+import com.example.medhigh.meetmd.appointments.AppointmentsActivity;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
 /**
- * Created by medhigh on 05.10.15.
+ * View for setting up new password
  */
 public class NewPasswordActivity extends AppCompatActivity  implements EditText.OnEditorActionListener{
 
@@ -44,7 +44,7 @@ public class NewPasswordActivity extends AppCompatActivity  implements EditText.
         if (isPasswordsCorrectAndMatches()) {
             //TODO INTENT FORWARD
             //Toast.makeText(this, "Intent Forward", Toast.LENGTH_SHORT).show();
-            startActivity(new Intent(this, ApointmentsActivity.class).addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT));
+            startActivity(new Intent(this, AppointmentsActivity.class).addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT));
         }
     }
 
